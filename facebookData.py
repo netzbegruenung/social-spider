@@ -69,5 +69,6 @@ def main():
     graph = facebook.GraphAPI(access_token=access_token)
     pprint(graph.get_object("B90DieGruenen", fields="fan_count,username,verification_status,website"))
 
+
 if __name__ == "__main__":
     main()
