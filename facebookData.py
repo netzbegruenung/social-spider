@@ -6,6 +6,7 @@ from ruamel import yaml
 from pprint import pprint
 import sys
 import re
+import twitter
 
 # Git repo for our data
 green_directory_repo = 'https://github.com/netzbegruenung/green-directory.git'
@@ -13,7 +14,11 @@ green_directory_repo = 'https://github.com/netzbegruenung/green-directory.git'
 # folder in that repo that holds the data
 green_direcory_data_path = 'data/countries/de'
 green_directory_local_path = './cache/green-directory'
-access_token = os.getenv("secret_facebook_access_token")
+facebook_access_token = os.getenv("secret_facebook_access_token")
+twitter_consumer_key = os.getenv("twitter_consumer_key")
+twitter_consumer_secret = os.getenv("twitter_consumer_secret")
+twitter_access_token_key = os.getenv("twitter_access_token_key")
+twitter_access_token_secret = os.getenv("twitter_access_token_secret")
 
 
 def get_green_directory():
@@ -62,6 +67,7 @@ def onerror(func, path, _):
     else:
         raise
 
+
 def getFacebookName(url):
     if "/groups/" in url:
         return None
@@ -77,6 +83,7 @@ def getFacebookName(url):
     
     elif url.split("/")[-2]:
         return url.split("/")[-2]
+
     
 def getTwitterName(url):
     if url.split("/")[-1]:
@@ -84,16 +91,25 @@ def getTwitterName(url):
     elif url.split("/")[-2]:
         return url.split("/")[-2]
 
+
 def main():
     get_green_directory()
-    if not access_token:
+    if not facebook_access_token:
         print("No access token found", file=sys.stderr)
         return
     
-    graph = facebook.GraphAPI(access_token=access_token)
-    #pprint(graph.get_object("B90DieGruenen", fields="fan_count,username,verification_status,website"))
+    twitterAPI = twitter.Api(consumer_key=twitter_consumer_key,
+                      consumer_secret=twitter_consumer_secret,
+                      access_token_key=twitter_access_token_key,
+                      access_token_secret=twitter_access_token_secret)
+    # user = twitterapi.GetUser(screen_name="die_gruenen")
+    # pprint(user.AsDict())
+
+    facebookGraphAPI = facebook.GraphAPI(access_token=facebook_access_token)
+    # pprint(graph.get_object("B90DieGruenen", fields="fan_count,username,verification_status,website"))
     doc = []
-    count = 0
+    fbcount = 0
+    twtcount = 0
     for entry in dir_entries():
         if not entry.get("urls"):
             continue
@@ -102,21 +118,34 @@ def main():
                 fbname = getFacebookName(url["url"])
                 if fbname:
                     try:
-                        fbdata = graph.get_object(fbname, fields="fan_count,username,verification_status,website")
+                        fbdata = facebookGraphAPI.get_object(fbname, fields="fan_count,username,verification_status,website")
                     except Exception as e:
+                        print("FACEBOOK ERROR for", url["url"], "--", fbname, file=sys.stderr)
                         print(e, file=sys.stderr)
                         continue
                     entry.update({"facebookData": fbdata, "facebookID": fbname})
                     print(fbname)
-                    print(fbdata)
-                    doc.append(entry)
-                    count += 1;
+                    fbcount += 1
+
             elif url["type"] == "TWITTER":
                 twtname = getTwitterName(url["url"])
+                twtcount += 1
+                try:
+                    user = twitterAPI.GetUser(screen_name=twtname)
+                    twtData = user.AsDict()
+                except Exception as e:
+                    print("TWITTER ERROR for", url["url"], "--", twtname, file=sys.stderr)
+                    print(e, file=sys.stderr)
+                    continue
+                entry.update({"twitterData": twtData, "twitterName": twtname})
+                print(twtname)
+
+        doc.append(entry)
                     
     with open("result.yaml", "w") as f:
         yaml.dump_all(doc, f)
-    print(count)
+    print("facebook:", fbcount, "twitter:", twtcount)
+
 
 if __name__ == "__main__":
     main()
