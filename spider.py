@@ -7,6 +7,7 @@ from pprint import pprint
 import sys
 import re
 import twitter
+import json
 
 # Git repo for our data
 green_directory_repo = 'https://github.com/netzbegruenung/green-directory.git'
@@ -108,9 +109,17 @@ def main():
     facebookGraphAPI = facebook.GraphAPI(access_token=facebook_access_token)
     # pprint(graph.get_object("B90DieGruenen", fields="fan_count,username,verification_status,website"))
     doc = []
+    result = {}
+    idx = 0
     fbcount = 0
     twtcount = 0
+    
     for entry in dir_entries():
+        fbname = "--"
+        fbLikes = 0
+        twtname = "--"
+        twtFollower = 0
+        
         if not entry.get("urls"):
             continue
         for url in entry["urls"]:
@@ -123,6 +132,8 @@ def main():
                         print("FACEBOOK ERROR for", url["url"], "--", fbname, file=sys.stderr)
                         print(e, file=sys.stderr)
                         continue
+                    
+                    fbLikes = fbdata["fan_count"]
                     entry.update({"facebookData": fbdata, "facebookID": fbname})
                     print(fbname)
                     fbcount += 1
@@ -137,13 +148,24 @@ def main():
                     print("TWITTER ERROR for", url["url"], "--", twtname, file=sys.stderr)
                     print(e, file=sys.stderr)
                     continue
+                twtFollower = twtData["followers_count"]
                 entry.update({"twitterData": twtData, "twitterName": twtname})
                 print(twtname)
 
         doc.append(entry)
-                    
-    with open("result.yaml", "w") as f:
-        yaml.dump_all(doc, f)
+        typ = entry.get("level").split(":")[1].replace("KREISVERBAND", "KV").replace("ORTSVERBAND", "OV").replace("LANDESVERBAND", "LV").replace("BUNDESVERBAND", "BV")
+        land = entry.get("state", "")
+        kreis = entry.get("district", "")
+        stadt = entry.get("city", "")
+        if fbname is None:
+            fbname = ""
+        result.update({str(idx): [typ, land, kreis, stadt, fbname, fbLikes, twtname, twtFollower]})
+        idx += 1
+                
+    with open("docs/result.json", "w") as f:
+        json.dump(result, f)
+    # with open("result.yaml", "w") as f:
+    #    yaml.dump_all(doc, f)
     print("facebook:", fbcount, "twitter:", twtcount)
 
 
