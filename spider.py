@@ -1,4 +1,3 @@
-import facebook
 from git import Repo
 import os
 import shutil
@@ -8,6 +7,8 @@ import sys
 import re
 import twitter
 import json
+from scraper import scrapeFacebookLikes, scrapeInstagramData
+from time import sleep
 
 # Git repo for our data
 green_directory_repo = 'https://github.com/netzbegruenung/green-directory.git'
@@ -15,7 +16,8 @@ green_directory_repo = 'https://github.com/netzbegruenung/green-directory.git'
 # folder in that repo that holds the data
 green_direcory_data_path = 'data/countries/de'
 green_directory_local_path = './cache/green-directory'
-facebook_access_token = os.getenv("secret_facebook_access_token")
+
+# facebook_access_token = os.getenv("secret_facebook_access_token")
 twitter_consumer_key = os.getenv("twitter_consumer_key")
 twitter_consumer_secret = os.getenv("twitter_consumer_secret")
 twitter_access_token_key = os.getenv("twitter_access_token_key")
@@ -93,32 +95,36 @@ def getTwitterName(url):
         return url.split("/")[-2]
 
 
+def getInstagramName(url):
+    if url.split("/")[-1]:
+        return url.split("/")[-1]
+    elif url.split("/")[-2]:
+        return url.split("/")[-2]
+
+
 def main():
     get_green_directory()
-    if not facebook_access_token:
-        print("No access token found", file=sys.stderr)
-        return
     
     twitterAPI = twitter.Api(consumer_key=twitter_consumer_key,
                       consumer_secret=twitter_consumer_secret,
                       access_token_key=twitter_access_token_key,
                       access_token_secret=twitter_access_token_secret)
-    # user = twitterapi.GetUser(screen_name="die_gruenen")
-    # pprint(user.AsDict())
 
-    facebookGraphAPI = facebook.GraphAPI(access_token=facebook_access_token)
-    # pprint(graph.get_object("B90DieGruenen", fields="fan_count,username,verification_status,website"))
-    doc = []
+    # facebookGraphAPI = facebook.GraphAPI(access_token=facebook_access_token)
+
     result = {}
     idx = 0
     fbcount = 0
     twtcount = 0
+    instacount = 0
     
     for entry in dir_entries():
         fbname = "--"
         fbLikes = 0
         twtname = "--"
         twtFollower = 0
+        instaName = "--"
+        instaFollower = 0
         
         if not entry.get("urls"):
             continue
@@ -127,14 +133,14 @@ def main():
                 fbname = getFacebookName(url["url"])
                 if fbname:
                     try:
-                        fbdata = facebookGraphAPI.get_object(fbname, fields="fan_count,username,verification_status,website")
+                        # fbdata = facebookGraphAPI.get_object(fbname, fields="fan_count,username,verification_status,website")
+                        fbLikes = scrapeFacebookLikes(fbname)
+                        sleep(0.1)
                     except Exception as e:
                         print("FACEBOOK ERROR for", url["url"], "--", fbname, file=sys.stderr)
                         print(e, file=sys.stderr)
                         continue
                     
-                    fbLikes = fbdata["fan_count"]
-                    entry.update({"facebookData": fbdata, "facebookID": fbname})
                     print(fbname)
                     fbcount += 1
 
@@ -149,24 +155,37 @@ def main():
                     print(e, file=sys.stderr)
                     continue
                 twtFollower = twtData["followers_count"]
-                entry.update({"twitterData": twtData, "twitterName": twtname})
                 print(twtname)
+            elif url["type"] == "INSTAGRAM":
+                instaName = getInstagramName(url["url"])
+                try:
+                    instaData = scrapeInstagramData(instaName)
+                    sleep(0.1)
+                except Exception as e:
+                    print("INSTAGRAM ERROR for", url["url"], "--", instaName, file=sys.stderr)
+                    print(e, file=sys.stderr)
+                    continue
+                
+                if instaData:
+                    instaFollower = instaData["edge_followed_by"]["count"]
+                    print(instaName, instaFollower)
+                    instacount += 1
 
-        doc.append(entry)
         typ = entry.get("level").split(":")[1].replace("KREISVERBAND", "KV").replace("ORTSVERBAND", "OV").replace("LANDESVERBAND", "LV").replace("BUNDESVERBAND", "BV")
         land = entry.get("state", "")
         kreis = entry.get("district", "")
         stadt = entry.get("city", "")
         if fbname is None:
-            fbname = ""
-        result.update({str(idx): [typ, land, kreis, stadt, fbname, fbLikes, twtname, twtFollower]})
+            fbname = "--"
+        result.update({str(idx): [typ, land, kreis, stadt, fbname, fbLikes, twtname, twtFollower, instaName, instaFollower]})
         idx += 1
-                
+        #if idx == 200:
+            #break
+
     with open("docs/result.json", "w") as f:
         json.dump(result, f)
-    # with open("result.yaml", "w") as f:
-    #    yaml.dump_all(doc, f)
-    print("facebook:", fbcount, "twitter:", twtcount)
+
+    print("facebook:", fbcount, "twitter:", twtcount, "instagram:", instacount)
 
 
 if __name__ == "__main__":
