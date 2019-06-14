@@ -4,12 +4,29 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Social Spider</title>
+  <link rel="stylesheet" href="https://netzbegruenung.github.io/webfonts/style.css">
+  <style type="text/css">
+    h1 {
+      font-family: 'Arvo Gruen', sans-serif;
+      font-weight: bold;
+      color: #46962b;
+      text-transform: uppercase;
+    }
+    table {
+        font-family: 'PT Sans';
+    }
+    .dataTables_filter {
+        font-family: 'PT Sans';
+    }
+    </style>
 </head>
 <body>
 
 <div>
-  <h5>Social Spider</h5>
-  <table id="datatable">
+  <div class="header">
+      <h1>Social Spider</h5>
+  </div>
+  <table id="datatable" class="display">
     <thead>
       <tr>
         <th>Typ</th>
@@ -27,21 +44,24 @@
   </table>
 </div>
 <script src="jquery-3.3.1.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
 <script type="text/javascript">
     $.getJSON("result.json" , function(data) {
         var tbl_body = document.createElement("tbody");
-        var odd_even = false;
         $.each(data, function() {
             var tbl_row = tbl_body.insertRow();
-            tbl_row.className = odd_even ? "odd" : "even";
             $.each(this, function(k , v) {
                 var cell = tbl_row.insertCell();
                 cell.appendChild(document.createTextNode(v.toString()));
-            })        
-            odd_even = !odd_even;
+            })
         })
         $("#datatable").append(tbl_body);
-});
+        $('#datatable').DataTable( {
+            paging: false,
+            "order" : [[ 5, "desc"]]
+        } );
+    });
 </script>
 </body>
 
