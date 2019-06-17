@@ -30,6 +30,7 @@
     <thead>
       <tr>
         <th>Typ</th>
+        <th>Level</th>
         <th>Land</th>
         <th>Kreis</th>
         <th>Stadt</th>
@@ -54,17 +55,17 @@
             $.each(this, function(idx , v) {
                 var cell = tbl_row.insertCell();
                 txt = v.toString();
-                if(idx == 4 && txt != "--"){
+                if(idx == 5 && txt != "--"){
                     var a = document.createElement('a');
                     a.appendChild(document.createTextNode(txt));
                     a.href = "https://www.facebook.com/" + txt;
                     cell.appendChild(a);
-                } else if (idx == 6 && txt != "--") {
+                } else if (idx == 7 && txt != "--") {
                     var a = document.createElement('a');
                     a.appendChild(document.createTextNode(txt));
                     a.href = "https://www.twitter.com/" + txt;
                     cell.appendChild(a);
-                } else if (idx == 8 && txt != "--") {
+                } else if (idx == 9 && txt != "--") {
                     var a = document.createElement('a');
                     a.appendChild(document.createTextNode(txt));
                     a.href = "https://www.instagram.com/" + txt;
@@ -77,7 +78,7 @@
         $("#datatable").append(tbl_body);
         $('#datatable').DataTable( {
             paging: false,
-            "order" : [[ 5, "desc"]]
+            "order" : [[ 6, "desc"]]
         } );
     });
 </script>
