@@ -2,6 +2,7 @@ import json
 from copy import copy
 from pprint import pprint
 from spider import dir_entries
+import difflib
 
 COUNTRY_MAP =  {"01": "Schleswig-Holstein",
                 "02": "Hamburg",
@@ -63,36 +64,19 @@ def initialize():
     print(len(green_data))
     return map_data, green_data
 
-
-def getEntryFromFeature(feature, map_data, green_data):
-    countrycode = feature["properties"]["SN_L"]
-    countryname = COUNTRY_MAP[countrycode]
-    print(countryname)
-    green_data_local = []
-    for d in green_data:
-        if d["state"] == countryname:
-            green_data_local.append(d)
-    map_data_local = []
-    for d in map_data:
-        if d["properties"]["SN_L"] == countrycode:
-            map_data_local.append(d)
-    print()
-    generateMapping(map_data_local, green_data_local)
-
-
 def generateMapping(map_data_local, green_data_local):
-    print("-----------------------------")
-    for d in green_data_local:
-        print(d["district"])
-    print("----")
-    for d in map_data_local:
-        name = d["properties"]["GEN"]
-        if d["properties"]["NBD"] == "ja":
-            fullname = d["properties"]["BEZ"] +" " + d["properties"]["GEN"]
-        else:
-            fullname = d["properties"]["GEN"]
-        print(fullname)
-    print("-----------------------------")
+    # print("-----------------------------")
+    # for d in green_data_local:
+    #     print(d["district"])
+    # print("----")
+    # for d in map_data_local:
+    #     name = d["properties"]["GEN"]
+    #     if d["properties"]["NBD"] == "ja":
+    #         fullname = d["properties"]["BEZ"] +" " + d["properties"]["GEN"]
+    #     else:
+    #         fullname = d["properties"]["GEN"]
+    #     print(fullname)
+    # print("-----------------------------")
 
     mapping = [-1] * len(map_data_local)
     mapCount = [0] * len(green_data_local)
@@ -177,12 +161,25 @@ def generateMapping(map_data_local, green_data_local):
                         mapping[i] = j
                         mapCount[j] += 1
 
-    print("------------------------")
+    # ------------------------------------------
+    # match with string similarity
+    # ------------------------------------------
+
+    mapCount_copy = copy(mapCount)
+    for i, d in enumerate(map_data_local):
+        if mapping[i] == -1:
+            name = d["properties"]["GEN"]
+            for j, entry in enumerate(green_data_local):
+                if mapCount_copy[j] == 0:
+                    similarity = difflib.SequenceMatcher(a=entry["district"].lower(), b=name.lower()).ratio()
+                    if similarity > 0.6:
+                        mapping[i] = j
+                        mapCount[j] += 1
 
     remaining = len([e for e in mapping if e == -1])
     print("Remaining:", remaining)
     if remaining == 0:
-        return 0
+        return mapping
 
     for j, entry in enumerate(green_data_local):
         if mapCount[j] == 0:
@@ -194,20 +191,15 @@ def generateMapping(map_data_local, green_data_local):
                 fullname = d["properties"]["BEZ"] +" " + d["properties"]["GEN"]
             else:
                 fullname = d["properties"]["GEN"]
-            print(fullname, "--", d["properties"]["GEN"])
 
+            print(fullname, "--", d["properties"]["GEN"], "--")
 
-    return remaining
+    return mapping
 
-
-if __name__ == '__main__':
-    #createBundeslaenderMap("facebookLikes", 5)
-    #createBundeslaenderMap("twitterFollower", 7)
-    #createBundeslaenderMap("instaFollower", 9)
+def preprocess():
     map_data, green_data = initialize()
-    #print(getEntryFromFeature(map_data[0], map_data, green_data))
-    #print(getEntryFromFeature(map_data[1], map_data, green_data))
-    remaining = 0
+
+    all_mapping_data = {}
     for countrycode in COUNTRY_MAP.keys():
         countryname = COUNTRY_MAP[countrycode]
         if countryname in ["Berlin", "Bremen", "Hamburg"]:
@@ -223,5 +215,30 @@ if __name__ == '__main__':
         print("===================================")
         print(countryname)
         print("===================================")
-        remaining += generateMapping(map_data_local, green_data_local)
-    print("REMAINING:", remaining)
+        mapping = generateMapping(map_data_local, green_data_local)
+        all_mapping_data[countrycode] = {"map_data_local": map_data_local,
+                                         "green_data_local": green_data_local,
+                                         "mapping": mapping}
+    return all_mapping_data
+
+
+def createMap(all_mapping_data):
+    result_features = []
+    for countrycode in all_mapping_data.keys():
+        for i, feature in enumerate(all_mapping_data[countrycode]["map_data_local"]):
+            entry_idx = all_mapping_data[countrycode]["mapping"][i]
+            if entry_idx != -1:
+                entry = all_mapping_data[countrycode]["green_data_local"][entry_idx]
+                feature["properties"]["fill"] = "#00ff00"
+            else:
+                feature["properties"]["fill"] = "#ff0000"
+            feature["properties"]["fill-opacity"] = 1
+            result_features.append(feature)
+    result_map = {"type": "FeatureCollection",
+                  "features": result_features}
+    with open("maps/test.geojson", "w") as output_f:
+        json.dump(result_map, output_f)
+
+if __name__ == "__main__":
+    all_mapping_data = preprocess()
+    createMap(all_mapping_data)
