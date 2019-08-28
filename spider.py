@@ -5,7 +5,6 @@ from ruamel import yaml
 from pprint import pprint
 import sys
 import re
-import twitter
 import json
 from scraper import scrapeFacebookLikes, scrapeInstagramData, scrapeTwitterFollowers
 from time import sleep
@@ -126,7 +125,7 @@ def main():
                         print("FACEBOOK ERROR for", url["url"], "--", fbname, file=sys.stderr)
                         print(e, file=sys.stderr)
                         continue
-                    print("FB", fbname, fbLikes)
+                    print(" FB", fbname, fbLikes)
                     fbcount += 1
 
             elif url["type"] == "TWITTER":
@@ -139,7 +138,7 @@ def main():
                     print(e, file=sys.stderr)
                     continue
                 twtcount += 1
-                print("TWITTER", twtname, twtFollower)
+                print(" TWITTER", twtname, twtFollower)
 
             elif url["type"] == "INSTAGRAM":
                 instaName = getInstagramName(url["url"])
@@ -153,16 +152,17 @@ def main():
                     print(e, file=sys.stderr)
                     continue
                 instacount += 1
-                print("INSTA", instaName, instaFollower)
+                print(" INSTA", instaName, instaFollower)
 
-        typ = entry.get("level").split(":")[1]
+        typ = entry.get("type")
+        level = entry.get("level", "")
         land = entry.get("state", "")
         kreis = entry.get("district", "")
         stadt = entry.get("city", "")
         if fbname is None:
             fbname = "--"
         if fbLikes + twtFollower + instaFollower > 0:
-            result.update({str(idx): [typ, land, kreis, stadt, fbname, fbLikes, twtname, twtFollower, instaName, instaFollower]})
+            result.update({str(idx): [typ, level, land, kreis, stadt, fbname, fbLikes, twtname, twtFollower, instaName, instaFollower]})
         idx += 1
 
     with open("docs/result.json", "w") as f:
