@@ -5,7 +5,6 @@ from ruamel import yaml
 from pprint import pprint
 import sys
 import re
-import twitter
 import json
 from scraper import scrapeFacebookLikes, scrapeInstagramData, scrapeTwitterFollowers
 from time import sleep
