@@ -162,7 +162,8 @@ def main():
         if fbname is None:
             fbname = "--"
         if fbLikes + twtFollower + instaFollower > 0:
-            result.update({str(idx): [typ, level, land, kreis, stadt, fbname, fbLikes, twtname, twtFollower, instaName, instaFollower]})
+            key = "//".join([typ, level, land, kreis, stadt])
+            result.update({key: [typ, level, land, kreis, stadt, fbname, fbLikes, twtname, twtFollower, instaName, instaFollower]})
         idx += 1
 
     with open("docs/result.json", "w") as f:
