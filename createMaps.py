@@ -21,6 +21,14 @@ COUNTRY_MAP =  {"01": "Schleswig-Holstein",
                 "15": "Sachsen-Anhalt",
                 "16": "Thüringen"}
 
+MAPPING = {"Neustadt a.d. Aisch-Bad Windsheim": "Neustadt-Aisch",
+           "Märkischer Kreis": "Mark",
+           "Osterode am Harz": "Göttingen",
+           "Göttingen": "Göttingen",
+           "Straubing": "Straubing-Bogen",
+           "Straubing-Bogen": "Straubing-Bogen",
+           "Kaufbeuren": "Ostallgäu",
+           "Ostallgäu": "Ostallgäu"}
 
 def createBundeslaenderMap(filename, column):
     with open("maps/bundeslaender_simplify200.geojson") as map_f:
@@ -59,6 +67,9 @@ def initialize():
         if entry["type"] == "REGIONAL_CHAPTER":
             if entry["level"] == "DE:KREISVERBAND":
                 green_data.append(entry)
+            if entry["level"] == "DE:REGIONALVERBAND":
+                entry["district"] = entry["region"]
+                green_data.append(entry)
 
     print(len(map_data))
     print(len(green_data))
@@ -82,18 +93,33 @@ def generateMapping(map_data_local, green_data_local):
     mapCount = [0] * len(green_data_local)
 
     # ------------------------------------------
+    # match predefined
+    # ------------------------------------------
+
+    for i, d in enumerate(map_data_local):
+        name = d["properties"]["GEN"]
+        if MAPPING.get(name):
+            mapName = MAPPING[name]
+            for j, entry in enumerate(green_data_local):
+                if mapName == entry["district"]:
+                    mapping[i] = j
+                    mapCount[j] += 1
+
+    # ------------------------------------------
     # match full name
     # ------------------------------------------
 
+    mapCount_copy = copy(mapCount)
     for i, d in enumerate(map_data_local):
         if d["properties"]["NBD"] == "ja":
             fullname = d["properties"]["BEZ"] +" " + d["properties"]["GEN"]
         else:
             fullname = d["properties"]["GEN"]
         for j, entry in enumerate(green_data_local):
-            if fullname == entry["district"]:
-                mapping[i] = j
-                mapCount[j] += 1
+            if mapCount_copy[j] == 0:
+                if fullname == entry["district"]:
+                    mapping[i] = j
+                    mapCount[j] += 1
 
     # ------------------------------------------
     # match -Land and -Stadt entries
@@ -119,6 +145,7 @@ def generateMapping(map_data_local, green_data_local):
     # match short name
     # ------------------------------------------
 
+    mapCount_copy = copy(mapCount)
     for i, d in enumerate(map_data_local):
         if mapping[i] == -1:
             name = d["properties"]["GEN"]
@@ -219,6 +246,7 @@ def preprocess():
         all_mapping_data[countrycode] = {"map_data_local": map_data_local,
                                          "green_data_local": green_data_local,
                                          "mapping": mapping}
+
     return all_mapping_data
 
 
@@ -233,6 +261,7 @@ def createMap(all_mapping_data):
             else:
                 feature["properties"]["fill"] = "#ff0000"
             feature["properties"]["fill-opacity"] = 1
+            feature["properties"].update(entry)
             result_features.append(feature)
     result_map = {"type": "FeatureCollection",
                   "features": result_features}
