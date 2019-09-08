@@ -41,7 +41,7 @@ def updateMaps(level="lv"):
             feature["properties"]["fill"] = col
             feature["properties"]["stroke-width"] = 0
         with open("maps/" + level + "_" + plattform + ".geojson", "w") as f:
-            json.dump(map_data, f)
+            json.dump(map_data, f, indent=4)
 
 if __name__ == "__main__":
     updateMaps(level="kv")

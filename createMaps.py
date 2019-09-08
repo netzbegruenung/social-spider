@@ -48,7 +48,7 @@ def createLVBasemap():
                     feature["properties"]["green-data"] = d
                     result_map["features"].append(feature)
     with open("maps/lv_basemap.geojson", "w", encoding='utf-8') as output_f:
-        json.dump(result_map, output_f)
+        json.dump(result_map, output_f, indent=4)
 
 def initialize():
     map_data = []
@@ -259,7 +259,7 @@ def createKVBasemap():
     result_map = {"type": "FeatureCollection",
                   "features": result_features}
     with open("maps/kv_basemap.geojson", "w") as output_f:
-        json.dump(result_map, output_f)
+        json.dump(result_map, output_f, indent=4)
 
 if __name__ == "__main__":
     createKVBasemap()
