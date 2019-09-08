@@ -1,2 +1,10 @@
 maps/bundeslaender_simplify200.geojson filter=lfs diff=lfs merge=lfs -text
 maps/landkreise_simplify200.geojson filter=lfs diff=lfs merge=lfs -text
+maps/kv_basemap.geojson filter=lfs diff=lfs merge=lfs -text
+maps/kv_fb.geojson filter=lfs diff=lfs merge=lfs -text
+maps/kv_in.geojson filter=lfs diff=lfs merge=lfs -text
+maps/kv_tw.geojson filter=lfs diff=lfs merge=lfs -text
+maps/lv_tw.geojson filter=lfs diff=lfs merge=lfs -text
+maps/lv_basemap.geojson filter=lfs diff=lfs merge=lfs -text
+maps/lv_fb.geojson filter=lfs diff=lfs merge=lfs -text
+maps/lv_in.geojson filter=lfs diff=lfs merge=lfs -text
