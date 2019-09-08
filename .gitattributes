@@ -1,0 +1,2 @@
+maps/bundeslaender_simplify200.geojson filter=lfs diff=lfs merge=lfs -text
+maps/landkreise_simplify200.geojson filter=lfs diff=lfs merge=lfs -text
