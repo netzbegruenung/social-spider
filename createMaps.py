@@ -30,32 +30,25 @@ MAPPING = {"Neustadt a.d. Aisch-Bad Windsheim": "Neustadt-Aisch",
            "Kaufbeuren": "Ostallgäu",
            "Ostallgäu": "Ostallgäu"}
 
-def createBundeslaenderMap(filename, column):
-    with open("maps/bundeslaender_simplify200.geojson") as map_f:
+def createLVBasemap():
+    green_data = []
+    for entry in dir_entries():
+        if entry["type"] == "REGIONAL_CHAPTER":
+            if entry["level"] == "DE:LANDESVERBAND":
+                green_data.append(entry)
+
+    with open("maps/bundeslaender_simplify200.geojson", encoding='utf-8') as map_f:
         maps = json.load(map_f)
-        with open("docs/result.json") as result_f:
-            result = json.load(result_f)
-            minimum = 1000000
-            maximum = -1
-            for _, elem in result.items():
-                if elem[0] != "LV":
-                    continue
-                if elem[column] < minimum:
-                    minimum = elem[column]
-                if elem[column] > maximum:
-                    maximum = elem[column]
-            print(maximum)
-            for feature in maps["features"]:
-                name = feature["properties"]["GEN"]
-                for _, elem in result.items():
-                    if elem[0] != "LV":
-                        continue
-                    if elem[1] != name:
-                        continue
-                    feature["properties"]["fill-opacity"] = elem[column] / maximum
-                    feature["properties"]["fill"] = "#00ff00"
-    with open("maps/bundeslaender_" + filename + ".geojson", "w") as output_f:
-        json.dump(maps, output_f)
+        result_map = copy(maps)
+        result_map["features"] = []
+        for feature in maps["features"]:
+            name = feature["properties"]["GEN"]
+            for d in green_data:
+                if d["state"] == name:
+                    feature["properties"]["green-data"] = d
+                    result_map["features"].append(feature)
+    with open("maps/lv_basemap.geojson", "w", encoding='utf-8') as output_f:
+        json.dump(result_map, output_f)
 
 def initialize():
     map_data = []
@@ -250,24 +243,24 @@ def preprocess():
     return all_mapping_data
 
 
-def createMap(all_mapping_data):
+def createKVBasemap():
+    all_mapping_data = preprocess()
     result_features = []
     for countrycode in all_mapping_data.keys():
         for i, feature in enumerate(all_mapping_data[countrycode]["map_data_local"]):
             entry_idx = all_mapping_data[countrycode]["mapping"][i]
             if entry_idx != -1:
                 entry = all_mapping_data[countrycode]["green_data_local"][entry_idx]
-                feature["properties"]["fill"] = "#00ff00"
             else:
-                feature["properties"]["fill"] = "#ff0000"
-            feature["properties"]["fill-opacity"] = 1
-            feature["properties"].update(entry)
+                # skip not-matched map parts
+                continue
+            feature["properties"]["green-data"] = entry
             result_features.append(feature)
     result_map = {"type": "FeatureCollection",
                   "features": result_features}
-    with open("maps/test.geojson", "w") as output_f:
+    with open("maps/kv_basemap.geojson", "w") as output_f:
         json.dump(result_map, output_f)
 
 if __name__ == "__main__":
-    all_mapping_data = preprocess()
-    createMap(all_mapping_data)
+    createKVBasemap()
+    createLVBasemap()
