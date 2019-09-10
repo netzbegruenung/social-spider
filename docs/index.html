@@ -1,55 +1,80 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Social Spider</title>
-  <link rel="stylesheet" href="https://netzbegruenung.github.io/webfonts/style.css">
-  <style type="text/css">
-    h1 {
-      font-family: 'Arvo Gruen', sans-serif;
-      font-weight: bold;
-      color: #46962b;
-      text-transform: uppercase;
-    }
-    table {
-        font-family: 'PT Sans';
-    }
-    .dataTables_filter {
-        font-family: 'PT Sans';
-    }
-    .dataTables_info {
-        font-family: 'PT Sans';
-    }
-    a {
-        color: #000000
-    }
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Social Spider</title>
+    <link rel="stylesheet" href="https://netzbegruenung.github.io/webfonts/style.css">
+    <style type="text/css">
+        h1 {
+            font-family: 'Arvo Gruen', sans-serif;
+            font-weight: bold;
+            color: #ffffff;
+            text-transform: uppercase;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        h2 {
+            font-family: 'Arvo Gruen', sans-serif;
+            font-weight: bold;
+            color: #ffffff;
+            margin-bottom: 0px;
+            margin-top: 0;
+        }
+        h5 {
+            font-family: 'Arvo', sans-serif;
+            color: #ffffff;
+            margin: 0;
+        }
+        .header {
+            background-color: #46962b;
+            padding: 20px;
+        }
+        body{
+            margin: 0;
+        }
+        a.headerlink {
+            color: #ffffff;
+        }
+        table {
+            font-family: 'PT Sans';
+        }
+        .dataTables_filter {
+            font-family: 'PT Sans';
+        }
+        .dataTables_info {
+            font-family: 'PT Sans';
+        }
+        a {
+            color: #000000
+        }
     </style>
 </head>
 <body>
-
-<div>
-  <div class="header">
-      <h1>Social Spider</h5>
-  </div>
-  <table id="datatable" class="display">
-    <thead>
-      <tr>
-        <th>Typ</th>
-        <th>Level</th>
-        <th>Land</th>
-        <th>Kreis</th>
-        <th>Stadt</th>
-        <th>FacebookID</th>
-        <th>Facebook Likes</th>
-        <th>TwitterID</th>
-        <th>Twitter Follower</th>
-        <th>InstagramID</th>
-        <th>Instagram Follower</th>
-      </tr>
-    </thead>
-  </table>
-</div>
+    <div class="header">
+        <h5><a class="headerlink", style="float: right;" href="https://github.com/netzbegruenung/social-spider", target="_blank">GitHub</a></h5>
+        <h1>Social Spider</h1>
+        <h2><a class="headerlink", href="index.html">Tabelle</a> | <a class="headerlink", href="maps.html">Karte</a></h2>
+    </div>
+    <div style="float: left; margin:20px;">
+        <table id="datatable">
+            <thead>
+            <tr>
+                <th>Typ</th>
+                <th>Level</th>
+                <th>Land</th>
+                <th>Kreis</th>
+                <th>Stadt</th>
+                <th>FacebookID</th>
+                <th>Facebook Likes</th>
+                <th>TwitterID</th>
+                <th>Twitter Follower</th>
+                <th>InstagramID</th>
+                <th>Instagram Follower</th>
+            </tr>
+            </thead>
+        </table>
+    </div>
 <script src="jquery-3.3.1.min.js"></script>
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
