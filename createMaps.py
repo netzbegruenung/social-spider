@@ -30,6 +30,8 @@ MAPPING = {"Neustadt a.d. Aisch-Bad Windsheim": "Neustadt-Aisch",
            "Kaufbeuren": "Ostallgäu",
            "Ostallgäu": "Ostallgäu"}
 
+REMOVE_BW = ["08215", "08226", "08136", "08436"]
+
 def createLVBasemap():
     green_data = []
     for entry in dir_entries():
@@ -45,7 +47,10 @@ def createLVBasemap():
             name = feature["properties"]["GEN"]
             for d in green_data:
                 if d["state"] == name:
-                    feature["properties"]["green-data"] = d
+                    feature["properties"] = {}
+                    feature["properties"]["type"] = d["type"]
+                    feature["properties"]["level"] = d["level"]
+                    feature["properties"]["state"] = d["state"]
                     result_map["features"].append(feature)
     with open("maps/lv_basemap.geojson", "w", encoding='utf-8') as output_f:
         json.dump(result_map, output_f, indent=4)
@@ -55,6 +60,23 @@ def initialize():
     green_data = []
     with open("maps/landkreise_simplify200.geojson") as map_f:
         map_data = json.load(map_f)["features"]
+
+    # add additional bw data:
+    map_data_copy = []
+    for feature in map_data:
+        if feature["properties"]["SN_L"] == "08" and feature["properties"]["RS"] in REMOVE_BW:
+            pass # don't add it
+        else:
+            map_data_copy.append(feature)
+    map_data = map_data_copy
+    with open("maps/additional_bw.geojson") as map_f:
+        map_data2 = json.load(map_f)["features"]
+        for feature in map_data2:
+            feature["properties"]["GEN"] = feature["properties"]["kvname"]
+            feature["properties"]["NBD"] = ""
+            feature["properties"]["BEZ"] = ""
+            feature["properties"]["SN_L"] = "08"
+        map_data += map_data2
 
     for entry in dir_entries():
         if entry["type"] == "REGIONAL_CHAPTER":
@@ -254,7 +276,11 @@ def createKVBasemap():
             else:
                 # skip not-matched map parts
                 continue
-            feature["properties"]["green-data"] = entry
+            feature["properties"] = {}
+            feature["properties"]["type"] = entry["type"]
+            feature["properties"]["level"] = entry["level"]
+            feature["properties"]["state"] = entry["state"]
+            feature["properties"]["district"] = entry["district"]
             result_features.append(feature)
     result_map = {"type": "FeatureCollection",
                   "features": result_features}

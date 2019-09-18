@@ -11,67 +11,9 @@
         {
             "type": "Feature",
             "properties": {
-                "ADE": 2,
-                "GF": 4,
-                "BSG": 1,
-                "RS": "10",
-                "AGS": "10",
-                "SDV_RS": "100410100100",
-                "GEN": "Saarland",
-                "BEZ": "Land",
-                "IBZ": 20,
-                "BEM": "--",
-                "NBD": "nein",
-                "SN_L": "10",
-                "SN_R": "0",
-                "SN_K": "00",
-                "SN_V1": "00",
-                "SN_V2": "00",
-                "SN_G": "000",
-                "FK_S3": "0",
-                "NUTS": "DEC",
-                "RS_0": "100000000000",
-                "AGS_0": "10000000",
-                "WSK": "2009/01/01",
-                "DEBKG_ID": "DEBKGDL20000E5E3",
-                "destatis": {
-                    "population": 989035,
-                    "population_m": 482599,
-                    "population_w": 506436
-                },
-                "green-data": {
-                    "type": "REGIONAL_CHAPTER",
-                    "level": "DE:LANDESVERBAND",
-                    "country": "DE",
-                    "state": "Saarland",
-                    "urls": [
-                        {
-                            "type": "WEBSITE",
-                            "url": "http://www.gruene-saar.de/"
-                        },
-                        {
-                            "type": "FACEBOOK",
-                            "url": "https://www.facebook.com/GrueneSaar/"
-                        },
-                        {
-                            "type": "TWITTER",
-                            "url": "https://twitter.com/Gruene_Saar"
-                        },
-                        {
-                            "type": "INSTAGRAM",
-                            "url": "https://www.instagram.com/gruene_saar/"
-                        },
-                        {
-                            "type": "WIKIDATA",
-                            "url": "https://www.wikidata.org/wiki/Q1020854"
-                        }
-                    ],
-                    "emails": [
-                        {
-                            "address": "lgs@gruene-saar.de"
-                        }
-                    ]
-                }
+                "type": "REGIONAL_CHAPTER",
+                "level": "DE:LANDESVERBAND",
+                "state": "Saarland"
             },
             "geometry": {
                 "type": "Polygon",
@@ -1364,67 +1306,9 @@
         {
             "type": "Feature",
             "properties": {
-                "ADE": 2,
-                "GF": 4,
-                "BSG": 1,
-                "RS": "08",
-                "AGS": "08",
-                "SDV_RS": "081110000000",
-                "GEN": "Baden-W\u00fcrttemberg",
-                "BEZ": "Land",
-                "IBZ": 20,
-                "BEM": "--",
-                "NBD": "ja",
-                "SN_L": "08",
-                "SN_R": "0",
-                "SN_K": "00",
-                "SN_V1": "00",
-                "SN_V2": "00",
-                "SN_G": "000",
-                "FK_S3": "0",
-                "NUTS": "DE1",
-                "RS_0": "080000000000",
-                "AGS_0": "08000000",
-                "WSK": "1997/01/01",
-                "DEBKG_ID": "DEBKGDL20000E603",
-                "destatis": {
-                    "population": 10716644,
-                    "population_m": 5284223,
-                    "population_w": 5432421
-                },
-                "green-data": {
-                    "type": "REGIONAL_CHAPTER",
-                    "level": "DE:LANDESVERBAND",
-                    "country": "DE",
-                    "state": "Baden-W\u00fcrttemberg",
-                    "urls": [
-                        {
-                            "type": "WEBSITE",
-                            "url": "https://www.gruene-bw.de/"
-                        },
-                        {
-                            "type": "FACEBOOK",
-                            "url": "https://www.facebook.com/gruenebw/"
-                        },
-                        {
-                            "type": "TWITTER",
-                            "url": "https://twitter.com/GrueneBW"
-                        },
-                        {
-                            "type": "INSTAGRAM",
-                            "url": "https://www.instagram.com/gruenebw/"
-                        },
-                        {
-                            "type": "WIKIDATA",
-                            "url": "https://www.wikidata.org/wiki/Q1020834"
-                        }
-                    ],
-                    "emails": [
-                        {
-                            "address": "landesverband@gruene-bw.de"
-                        }
-                    ]
-                }
+                "type": "REGIONAL_CHAPTER",
+                "level": "DE:LANDESVERBAND",
+                "state": "Baden-W\u00fcrttemberg"
             },
             "geometry": {
                 "type": "MultiPolygon",
@@ -7053,73 +6937,9 @@
         {
             "type": "Feature",
             "properties": {
-                "ADE": 2,
-                "GF": 4,
-                "BSG": 1,
-                "RS": "05",
-                "AGS": "05",
-                "SDV_RS": "051110000000",
-                "GEN": "Nordrhein-Westfalen",
-                "BEZ": "Land",
-                "IBZ": 20,
-                "BEM": "--",
-                "NBD": "ja",
-                "SN_L": "05",
-                "SN_R": "0",
-                "SN_K": "00",
-                "SN_V1": "00",
-                "SN_V2": "00",
-                "SN_G": "000",
-                "FK_S3": "0",
-                "NUTS": "DEA",
-                "RS_0": "050000000000",
-                "AGS_0": "05000000",
-                "WSK": "2009/11/01",
-                "DEBKG_ID": "DEBKGDL20000E6GR",
-                "destatis": {
-                    "population": 17638098,
-                    "population_m": 8606003,
-                    "population_w": 9032095
-                },
-                "green-data": {
-                    "type": "REGIONAL_CHAPTER",
-                    "external_refs": [
-                        {
-                            "type": "SHERPA",
-                            "key": "11000000"
-                        }
-                    ],
-                    "level": "DE:LANDESVERBAND",
-                    "country": "DE",
-                    "state": "Nordrhein-Westfalen",
-                    "urls": [
-                        {
-                            "type": "WEBSITE",
-                            "url": "https://gruene-nrw.de/"
-                        },
-                        {
-                            "type": "FACEBOOK",
-                            "url": "https://www.facebook.com/gruenenrw/"
-                        },
-                        {
-                            "type": "TWITTER",
-                            "url": "https://twitter.com/gruenenrw"
-                        },
-                        {
-                            "type": "INSTAGRAM",
-                            "url": "https://www.instagram.com/gruenenrw/"
-                        },
-                        {
-                            "type": "WIKIDATA",
-                            "url": "https://www.wikidata.org/wiki/Q1020850"
-                        }
-                    ],
-                    "emails": [
-                        {
-                            "address": "info@gruene-nrw.de"
-                        }
-                    ]
-                }
+                "type": "REGIONAL_CHAPTER",
+                "level": "DE:LANDESVERBAND",
+                "state": "Nordrhein-Westfalen"
             },
             "geometry": {
                 "type": "MultiPolygon",
@@ -12150,75 +11970,9 @@
         {
             "type": "Feature",
             "properties": {
-                "ADE": 2,
-                "GF": 1,
-                "BSG": 1,
-                "RS": "01",
-                "AGS": "01",
-                "SDV_RS": "010020000000",
-                "GEN": "Schleswig-Holstein",
-                "BEZ": "Land",
-                "IBZ": 20,
-                "BEM": "--",
-                "NBD": "ja",
-                "SN_L": "01",
-                "SN_R": "0",
-                "SN_K": "00",
-                "SN_V1": "00",
-                "SN_V2": "00",
-                "SN_G": "000",
-                "FK_S3": "0",
-                "NUTS": "DEF",
-                "RS_0": "010000000000",
-                "AGS_0": "01000000",
-                "WSK": "2012/02/01",
-                "DEBKG_ID": "DEBKGDL20000QFG6",
-                "destatis": {
-                    "population": 2830864,
-                    "population_m": 1381451,
-                    "population_w": 1449413
-                },
-                "green-data": {
-                    "type": "REGIONAL_CHAPTER",
-                    "level": "DE:LANDESVERBAND",
-                    "country": "DE",
-                    "state": "Schleswig-Holstein",
-                    "urls": [
-                        {
-                            "type": "WEBSITE",
-                            "url": "https://sh-gruene.de/"
-                        },
-                        {
-                            "type": "FACEBOOK",
-                            "url": "https://www.facebook.com/gruenesh"
-                        },
-                        {
-                            "type": "TWITTER",
-                            "url": "http://twitter.com/gruene_sh"
-                        },
-                        {
-                            "type": "YOUTUBE",
-                            "url": "https://www.youtube.com/user/GrueneSH"
-                        },
-                        {
-                            "type": "INSTAGRAM",
-                            "url": "https://instagram.com/gruenesh"
-                        },
-                        {
-                            "type": "FLICKR",
-                            "url": "https://www.flickr.com/photos/gruene_sh/"
-                        },
-                        {
-                            "type": "WIKIDATA",
-                            "url": "https://www.wikidata.org/wiki/Q1020855"
-                        }
-                    ],
-                    "emails": [
-                        {
-                            "address": "info@sh-gruene.de"
-                        }
-                    ]
-                }
+                "type": "REGIONAL_CHAPTER",
+                "level": "DE:LANDESVERBAND",
+                "state": "Schleswig-Holstein"
             },
             "geometry": {
                 "type": "MultiPolygon",
@@ -15119,67 +14873,9 @@
         {
             "type": "Feature",
             "properties": {
-                "ADE": 2,
-                "GF": 4,
-                "BSG": 1,
-                "RS": "04",
-                "AGS": "04",
-                "SDV_RS": "040110000000",
-                "GEN": "Bremen",
-                "BEZ": "Freie Hansestadt",
-                "IBZ": 23,
-                "BEM": "--",
-                "NBD": "ja",
-                "SN_L": "04",
-                "SN_R": "0",
-                "SN_K": "00",
-                "SN_V1": "00",
-                "SN_V2": "00",
-                "SN_G": "000",
-                "FK_S3": "0",
-                "NUTS": "DE5",
-                "RS_0": "040000000000",
-                "AGS_0": "04000000",
-                "WSK": "2010/01/01",
-                "DEBKG_ID": "DEBKGDL20000E0SF",
-                "destatis": {
-                    "population": 661888,
-                    "population_m": 324423,
-                    "population_w": 337465
-                },
-                "green-data": {
-                    "type": "REGIONAL_CHAPTER",
-                    "level": "DE:LANDESVERBAND",
-                    "country": "DE",
-                    "state": "Bremen",
-                    "urls": [
-                        {
-                            "type": "WEBSITE",
-                            "url": "https://gruene-bremen.de"
-                        },
-                        {
-                            "type": "FACEBOOK",
-                            "url": "https://www.facebook.com/gruenebremen"
-                        },
-                        {
-                            "type": "WIKIDATA",
-                            "url": "https://www.wikidata.org/wiki/Q1020839"
-                        },
-                        {
-                            "type": "INSTAGRAM",
-                            "url": "https://www.instagram.com/gruenebremen/"
-                        },
-                        {
-                            "type": "TWITTER",
-                            "url": "https://twitter.com/GrueneBremen"
-                        }
-                    ],
-                    "emails": [
-                        {
-                            "address": "info@gruene-bremen.de"
-                        }
-                    ]
-                }
+                "type": "REGIONAL_CHAPTER",
+                "level": "DE:LANDESVERBAND",
+                "state": "Bremen"
             },
             "geometry": {
                 "type": "MultiPolygon",
@@ -15882,75 +15578,9 @@
         {
             "type": "Feature",
             "properties": {
-                "ADE": 2,
-                "GF": 4,
-                "BSG": 1,
-                "RS": "06",
-                "AGS": "06",
-                "SDV_RS": "064140000000",
-                "GEN": "Hessen",
-                "BEZ": "Land",
-                "IBZ": 20,
-                "BEM": "--",
-                "NBD": "ja",
-                "SN_L": "06",
-                "SN_R": "0",
-                "SN_K": "00",
-                "SN_V1": "00",
-                "SN_V2": "00",
-                "SN_G": "000",
-                "FK_S3": "0",
-                "NUTS": "DE7",
-                "RS_0": "060000000000",
-                "AGS_0": "06000000",
-                "WSK": "2015/01/01",
-                "DEBKG_ID": "DEBKGDL20000E3LK",
-                "destatis": {
-                    "population": 6093888,
-                    "population_m": 2991752,
-                    "population_w": 3102136
-                },
-                "green-data": {
-                    "type": "REGIONAL_CHAPTER",
-                    "level": "DE:LANDESVERBAND",
-                    "country": "DE",
-                    "state": "Hessen",
-                    "urls": [
-                        {
-                            "type": "WEBSITE",
-                            "url": "https://www.gruene-hessen.de/"
-                        },
-                        {
-                            "type": "FACEBOOK",
-                            "url": "https://www.facebook.com/gruenehessen"
-                        },
-                        {
-                            "type": "TWITTER",
-                            "url": "http://twitter.com/gruenehessen"
-                        },
-                        {
-                            "type": "INSTAGRAM",
-                            "url": "https://www.instagram.com/gruenehessen/"
-                        },
-                        {
-                            "type": "FLICKR",
-                            "url": "https://www.flickr.com/photos/gruene-hessen/"
-                        },
-                        {
-                            "type": "YOUTUBE",
-                            "url": "https://www.youtube.com/user/hessengruen"
-                        },
-                        {
-                            "type": "WIKIDATA",
-                            "url": "https://www.wikidata.org/wiki/Q1020843"
-                        }
-                    ],
-                    "emails": [
-                        {
-                            "address": "landesverband@gruene-hessen.de"
-                        }
-                    ]
-                }
+                "type": "REGIONAL_CHAPTER",
+                "level": "DE:LANDESVERBAND",
+                "state": "Hessen"
             },
             "geometry": {
                 "type": "MultiPolygon",
@@ -20319,67 +19949,9 @@
         {
             "type": "Feature",
             "properties": {
-                "ADE": 2,
-                "GF": 4,
-                "BSG": 1,
-                "RS": "12",
-                "AGS": "12",
-                "SDV_RS": "120540000000",
-                "GEN": "Brandenburg",
-                "BEZ": "Land",
-                "IBZ": 20,
-                "BEM": "--",
-                "NBD": "ja",
-                "SN_L": "12",
-                "SN_R": "0",
-                "SN_K": "00",
-                "SN_V1": "00",
-                "SN_V2": "00",
-                "SN_G": "000",
-                "FK_S3": "0",
-                "NUTS": "DE4",
-                "RS_0": "120000000000",
-                "AGS_0": "12000000",
-                "WSK": "1999/01/20",
-                "DEBKG_ID": "DEBKGDL20000E675",
-                "destatis": {
-                    "population": 2457872,
-                    "population_m": 1210474,
-                    "population_w": 1247398
-                },
-                "green-data": {
-                    "type": "REGIONAL_CHAPTER",
-                    "level": "DE:LANDESVERBAND",
-                    "country": "DE",
-                    "state": "Brandenburg",
-                    "urls": [
-                        {
-                            "type": "WEBSITE",
-                            "url": "https://gruene-brandenburg.de/"
-                        },
-                        {
-                            "type": "FACEBOOK",
-                            "url": "https://www.facebook.com/gruenebrandenburg"
-                        },
-                        {
-                            "type": "TWITTER",
-                            "url": "https://twitter.com/gruenebbg"
-                        },
-                        {
-                            "type": "INSTAGRAM",
-                            "url": "https://www.instagram.com/gruenebbg/"
-                        },
-                        {
-                            "type": "WIKIDATA",
-                            "url": "https://www.wikidata.org/wiki/Q1020841"
-                        }
-                    ],
-                    "emails": [
-                        {
-                            "address": "info@gruene-brandenburg.de"
-                        }
-                    ]
-                }
+                "type": "REGIONAL_CHAPTER",
+                "level": "DE:LANDESVERBAND",
+                "state": "Brandenburg"
             },
             "geometry": {
                 "type": "MultiPolygon",
@@ -25176,71 +24748,9 @@
         {
             "type": "Feature",
             "properties": {
-                "ADE": 2,
-                "GF": 4,
-                "BSG": 1,
-                "RS": "03",
-                "AGS": "03",
-                "SDV_RS": "032410001001",
-                "GEN": "Niedersachsen",
-                "BEZ": "Land",
-                "IBZ": 20,
-                "BEM": "--",
-                "NBD": "ja",
-                "SN_L": "03",
-                "SN_R": "0",
-                "SN_K": "00",
-                "SN_V1": "00",
-                "SN_V2": "00",
-                "SN_G": "000",
-                "FK_S3": "0",
-                "NUTS": "DE9",
-                "RS_0": "030000000000",
-                "AGS_0": "03000000",
-                "WSK": "2015/01/01",
-                "DEBKG_ID": "DEBKGDL20000E6EW",
-                "destatis": {
-                    "population": 7826739,
-                    "population_m": 3846089,
-                    "population_w": 3980650
-                },
-                "green-data": {
-                    "type": "REGIONAL_CHAPTER",
-                    "level": "DE:LANDESVERBAND",
-                    "country": "DE",
-                    "state": "Niedersachsen",
-                    "urls": [
-                        {
-                            "type": "WEBSITE",
-                            "url": "https://www.gruene-niedersachsen.de/"
-                        },
-                        {
-                            "type": "FACEBOOK",
-                            "url": "https://www.facebook.com/GRUENE.Niedersachsen"
-                        },
-                        {
-                            "type": "TWITTER",
-                            "url": "https://twitter.com/gruenelvnds"
-                        },
-                        {
-                            "type": "INSTAGRAM",
-                            "url": "https://www.instagram.com/gruenends/"
-                        },
-                        {
-                            "type": "YOUTUBE",
-                            "url": "https://www.youtube.com/user/grueneniedersachsen"
-                        },
-                        {
-                            "type": "WIKIDATA",
-                            "url": "https://www.wikidata.org/wiki/Q1020847"
-                        }
-                    ],
-                    "emails": [
-                        {
-                            "address": "landesverband@gruene-niedersachsen.de"
-                        }
-                    ]
-                }
+                "type": "REGIONAL_CHAPTER",
+                "level": "DE:LANDESVERBAND",
+                "state": "Niedersachsen"
             },
             "geometry": {
                 "type": "MultiPolygon",
@@ -32157,67 +31667,9 @@
         {
             "type": "Feature",
             "properties": {
-                "ADE": 2,
-                "GF": 4,
-                "BSG": 1,
-                "RS": "13",
-                "AGS": "13",
-                "SDV_RS": "130040000000",
-                "GEN": "Mecklenburg-Vorpommern",
-                "BEZ": "Land",
-                "IBZ": 20,
-                "BEM": "--",
-                "NBD": "ja",
-                "SN_L": "13",
-                "SN_R": "0",
-                "SN_K": "00",
-                "SN_V1": "00",
-                "SN_V2": "00",
-                "SN_G": "000",
-                "FK_S3": "0",
-                "NUTS": "DE8",
-                "RS_0": "130000000000",
-                "AGS_0": "13000000",
-                "WSK": "2014/11/01",
-                "DEBKG_ID": "DEBKGDL20000004A",
-                "destatis": {
-                    "population": 1599138,
-                    "population_m": 787945,
-                    "population_w": 811193
-                },
-                "green-data": {
-                    "type": "REGIONAL_CHAPTER",
-                    "level": "DE:LANDESVERBAND",
-                    "country": "DE",
-                    "state": "Mecklenburg-Vorpommern",
-                    "urls": [
-                        {
-                            "type": "WEBSITE",
-                            "url": "https://gruene-mv.de/"
-                        },
-                        {
-                            "type": "FACEBOOK",
-                            "url": "https://www.facebook.com/gruenemv"
-                        },
-                        {
-                            "type": "TWITTER",
-                            "url": "https://twitter.com/GRUENE_MV"
-                        },
-                        {
-                            "type": "INSTAGRAM",
-                            "url": "https://www.instagram.com/gruenemv/"
-                        },
-                        {
-                            "type": "WIKIDATA",
-                            "url": "https://www.wikidata.org/wiki/Q1020846"
-                        }
-                    ],
-                    "emails": [
-                        {
-                            "address": "post@gruene-mv.de"
-                        }
-                    ]
-                }
+                "type": "REGIONAL_CHAPTER",
+                "level": "DE:LANDESVERBAND",
+                "state": "Mecklenburg-Vorpommern"
             },
             "geometry": {
                 "type": "MultiPolygon",
@@ -40606,71 +40058,9 @@
         {
             "type": "Feature",
             "properties": {
-                "ADE": 2,
-                "GF": 4,
-                "BSG": 1,
-                "RS": "07",
-                "AGS": "07",
-                "SDV_RS": "073150000000",
-                "GEN": "Rheinland-Pfalz",
-                "BEZ": "Land",
-                "IBZ": 20,
-                "BEM": "--",
-                "NBD": "ja",
-                "SN_L": "07",
-                "SN_R": "0",
-                "SN_K": "00",
-                "SN_V1": "00",
-                "SN_V2": "00",
-                "SN_G": "000",
-                "FK_S3": "0",
-                "NUTS": "DEB",
-                "RS_0": "070000000000",
-                "AGS_0": "07000000",
-                "WSK": "2004/01/01",
-                "DEBKG_ID": "DEBKGDL20000E6ZO",
-                "destatis": {
-                    "population": 4011582,
-                    "population_m": 1970535,
-                    "population_w": 2041047
-                },
-                "green-data": {
-                    "type": "REGIONAL_CHAPTER",
-                    "level": "DE:LANDESVERBAND",
-                    "country": "DE",
-                    "state": "Rheinland-Pfalz",
-                    "urls": [
-                        {
-                            "type": "WEBSITE",
-                            "url": "https://gruene-rlp.de/"
-                        },
-                        {
-                            "type": "FACEBOOK",
-                            "url": "https://www.facebook.com/gruenerlp/"
-                        },
-                        {
-                            "type": "TWITTER",
-                            "url": "https://twitter.com/gruene_rlp/"
-                        },
-                        {
-                            "type": "INSTAGRAM",
-                            "url": "https://www.instagram.com/gruene_rlp/"
-                        },
-                        {
-                            "type": "YOUTUBE",
-                            "url": "https://www.youtube.com/user/gruenerlp/"
-                        },
-                        {
-                            "type": "WIKIDATA",
-                            "url": "https://www.wikidata.org/wiki/Q1020849"
-                        }
-                    ],
-                    "emails": [
-                        {
-                            "address": "lgs@gruene-rlp.de"
-                        }
-                    ]
-                }
+                "type": "REGIONAL_CHAPTER",
+                "level": "DE:LANDESVERBAND",
+                "state": "Rheinland-Pfalz"
             },
             "geometry": {
                 "type": "Polygon",
@@ -44427,75 +43817,9 @@
         {
             "type": "Feature",
             "properties": {
-                "ADE": 2,
-                "GF": 4,
-                "BSG": 1,
-                "RS": "11",
-                "AGS": "11",
-                "SDV_RS": "110000000000",
-                "GEN": "Berlin",
-                "BEZ": "Land",
-                "IBZ": 20,
-                "BEM": "--",
-                "NBD": "ja",
-                "SN_L": "11",
-                "SN_R": "0",
-                "SN_K": "00",
-                "SN_V1": "00",
-                "SN_V2": "00",
-                "SN_G": "000",
-                "FK_S3": "0",
-                "NUTS": "DE3",
-                "RS_0": "110000000000",
-                "AGS_0": "11000000",
-                "WSK": "1990/10/03",
-                "DEBKG_ID": "DEBKGDL20000E0P5",
-                "destatis": {
-                    "population": 3469849,
-                    "population_m": 1696218,
-                    "population_w": 1773631
-                },
-                "green-data": {
-                    "type": "REGIONAL_CHAPTER",
-                    "level": "DE:LANDESVERBAND",
-                    "country": "DE",
-                    "state": "Berlin",
-                    "urls": [
-                        {
-                            "type": "WEBSITE",
-                            "url": "https://gruene.berlin/"
-                        },
-                        {
-                            "type": "TWITTER",
-                            "url": "https://twitter.com/gruene_berlin"
-                        },
-                        {
-                            "type": "FACEBOOK",
-                            "url": "https://www.facebook.com/Buendnis90DieGruenenBerlin"
-                        },
-                        {
-                            "type": "YOUTUBE",
-                            "url": "https://www.youtube.com/user/grueneberlin"
-                        },
-                        {
-                            "type": "FLICKR",
-                            "url": "https://www.flickr.com/photos/grueneberlin/"
-                        },
-                        {
-                            "type": "INSTAGRAM",
-                            "url": "https://www.instagram.com/gruene_berlin/"
-                        },
-                        {
-                            "type": "WIKIDATA",
-                            "url": "https://www.wikidata.org/wiki/Q1020838"
-                        }
-                    ],
-                    "emails": [
-                        {
-                            "address": "info@gruene-berlin.de"
-                        }
-                    ]
-                }
+                "type": "REGIONAL_CHAPTER",
+                "level": "DE:LANDESVERBAND",
+                "state": "Berlin"
             },
             "geometry": {
                 "type": "Polygon",
@@ -45224,67 +44548,9 @@
         {
             "type": "Feature",
             "properties": {
-                "ADE": 2,
-                "GF": 2,
-                "BSG": 1,
-                "RS": "04",
-                "AGS": "04",
-                "SDV_RS": "040110000000",
-                "GEN": "Bremen",
-                "BEZ": "Freie Hansestadt",
-                "IBZ": 23,
-                "BEM": "--",
-                "NBD": "ja",
-                "SN_L": "04",
-                "SN_R": "0",
-                "SN_K": "00",
-                "SN_V1": "00",
-                "SN_V2": "00",
-                "SN_G": "000",
-                "FK_S3": "0",
-                "NUTS": "DE5",
-                "RS_0": "040000000000",
-                "AGS_0": "04000000",
-                "WSK": "2010/01/01",
-                "DEBKG_ID": "DEBKGDL20000004N",
-                "destatis": {
-                    "population": 661888,
-                    "population_m": 324423,
-                    "population_w": 337465
-                },
-                "green-data": {
-                    "type": "REGIONAL_CHAPTER",
-                    "level": "DE:LANDESVERBAND",
-                    "country": "DE",
-                    "state": "Bremen",
-                    "urls": [
-                        {
-                            "type": "WEBSITE",
-                            "url": "https://gruene-bremen.de"
-                        },
-                        {
-                            "type": "FACEBOOK",
-                            "url": "https://www.facebook.com/gruenebremen"
-                        },
-                        {
-                            "type": "WIKIDATA",
-                            "url": "https://www.wikidata.org/wiki/Q1020839"
-                        },
-                        {
-                            "type": "INSTAGRAM",
-                            "url": "https://www.instagram.com/gruenebremen/"
-                        },
-                        {
-                            "type": "TWITTER",
-                            "url": "https://twitter.com/GrueneBremen"
-                        }
-                    ],
-                    "emails": [
-                        {
-                            "address": "info@gruene-bremen.de"
-                        }
-                    ]
-                }
+                "type": "REGIONAL_CHAPTER",
+                "level": "DE:LANDESVERBAND",
+                "state": "Bremen"
             },
             "geometry": {
                 "type": "Polygon",
@@ -45361,67 +44627,9 @@
         {
             "type": "Feature",
             "properties": {
-                "ADE": 2,
-                "GF": 1,
-                "BSG": 1,
-                "RS": "08",
-                "AGS": "08",
-                "SDV_RS": "081110000000",
-                "GEN": "Baden-W\u00fcrttemberg",
-                "BEZ": "Land",
-                "IBZ": 20,
-                "BEM": "--",
-                "NBD": "ja",
-                "SN_L": "08",
-                "SN_R": "0",
-                "SN_K": "00",
-                "SN_V1": "00",
-                "SN_V2": "00",
-                "SN_G": "000",
-                "FK_S3": "0",
-                "NUTS": "DE1",
-                "RS_0": "080000000000",
-                "AGS_0": "08000000",
-                "WSK": "1997/01/01",
-                "DEBKG_ID": "DEBKGDL20000HKPK",
-                "destatis": {
-                    "population": 10716644,
-                    "population_m": 5284223,
-                    "population_w": 5432421
-                },
-                "green-data": {
-                    "type": "REGIONAL_CHAPTER",
-                    "level": "DE:LANDESVERBAND",
-                    "country": "DE",
-                    "state": "Baden-W\u00fcrttemberg",
-                    "urls": [
-                        {
-                            "type": "WEBSITE",
-                            "url": "https://www.gruene-bw.de/"
-                        },
-                        {
-                            "type": "FACEBOOK",
-                            "url": "https://www.facebook.com/gruenebw/"
-                        },
-                        {
-                            "type": "TWITTER",
-                            "url": "https://twitter.com/GrueneBW"
-                        },
-                        {
-                            "type": "INSTAGRAM",
-                            "url": "https://www.instagram.com/gruenebw/"
-                        },
-                        {
-                            "type": "WIKIDATA",
-                            "url": "https://www.wikidata.org/wiki/Q1020834"
-                        }
-                    ],
-                    "emails": [
-                        {
-                            "address": "landesverband@gruene-bw.de"
-                        }
-                    ]
-                }
+                "type": "REGIONAL_CHAPTER",
+                "level": "DE:LANDESVERBAND",
+                "state": "Baden-W\u00fcrttemberg"
             },
             "geometry": {
                 "type": "Polygon",
@@ -45656,67 +44864,9 @@
         {
             "type": "Feature",
             "properties": {
-                "ADE": 2,
-                "GF": 2,
-                "BSG": 1,
-                "RS": "08",
-                "AGS": "08",
-                "SDV_RS": "081110000000",
-                "GEN": "Baden-W\u00fcrttemberg",
-                "BEZ": "Land",
-                "IBZ": 20,
-                "BEM": "--",
-                "NBD": "ja",
-                "SN_L": "08",
-                "SN_R": "0",
-                "SN_K": "00",
-                "SN_V1": "00",
-                "SN_V2": "00",
-                "SN_G": "000",
-                "FK_S3": "0",
-                "NUTS": "DE1",
-                "RS_0": "080000000000",
-                "AGS_0": "08000000",
-                "WSK": "1997/01/01",
-                "DEBKG_ID": "DEBKGDL20000JP1Z",
-                "destatis": {
-                    "population": 10716644,
-                    "population_m": 5284223,
-                    "population_w": 5432421
-                },
-                "green-data": {
-                    "type": "REGIONAL_CHAPTER",
-                    "level": "DE:LANDESVERBAND",
-                    "country": "DE",
-                    "state": "Baden-W\u00fcrttemberg",
-                    "urls": [
-                        {
-                            "type": "WEBSITE",
-                            "url": "https://www.gruene-bw.de/"
-                        },
-                        {
-                            "type": "FACEBOOK",
-                            "url": "https://www.facebook.com/gruenebw/"
-                        },
-                        {
-                            "type": "TWITTER",
-                            "url": "https://twitter.com/GrueneBW"
-                        },
-                        {
-                            "type": "INSTAGRAM",
-                            "url": "https://www.instagram.com/gruenebw/"
-                        },
-                        {
-                            "type": "WIKIDATA",
-                            "url": "https://www.wikidata.org/wiki/Q1020834"
-                        }
-                    ],
-                    "emails": [
-                        {
-                            "address": "landesverband@gruene-bw.de"
-                        }
-                    ]
-                }
+                "type": "REGIONAL_CHAPTER",
+                "level": "DE:LANDESVERBAND",
+                "state": "Baden-W\u00fcrttemberg"
             },
             "geometry": {
                 "type": "MultiPolygon",
@@ -45835,75 +44985,9 @@
         {
             "type": "Feature",
             "properties": {
-                "ADE": 2,
-                "GF": 2,
-                "BSG": 1,
-                "RS": "02",
-                "AGS": "02",
-                "SDV_RS": "020000000000",
-                "GEN": "Hamburg",
-                "BEZ": "Freie und Hansestadt",
-                "IBZ": 22,
-                "BEM": "--",
-                "NBD": "ja",
-                "SN_L": "02",
-                "SN_R": "0",
-                "SN_K": "00",
-                "SN_V1": "00",
-                "SN_V2": "00",
-                "SN_G": "000",
-                "FK_S3": "0",
-                "NUTS": "DE6",
-                "RS_0": "020000000000",
-                "AGS_0": "02000000",
-                "WSK": "1974/01/01",
-                "DEBKG_ID": "DEBKGDL20000QMRX",
-                "destatis": {
-                    "population": 1762791,
-                    "population_m": 857446,
-                    "population_w": 905345
-                },
-                "green-data": {
-                    "type": "REGIONAL_CHAPTER",
-                    "level": "DE:LANDESVERBAND",
-                    "country": "DE",
-                    "state": "Hamburg",
-                    "urls": [
-                        {
-                            "type": "WEBSITE",
-                            "url": "https://www.gruene-hamburg.de/"
-                        },
-                        {
-                            "type": "FACEBOOK",
-                            "url": "https://www.facebook.com/gruene.hamburg/"
-                        },
-                        {
-                            "type": "TWITTER",
-                            "url": "http://twitter.com/GRUENE_Hamburg/"
-                        },
-                        {
-                            "type": "INSTAGRAM",
-                            "url": "https://www.instagram.com/gruene_hamburg/"
-                        },
-                        {
-                            "type": "FLICKR",
-                            "url": "http://www.flickr.com/gruene_hamburg"
-                        },
-                        {
-                            "type": "YOUTUBE",
-                            "url": "http://youtube.com/user/galhamburg"
-                        },
-                        {
-                            "type": "WIKIDATA",
-                            "url": "https://www.wikidata.org/wiki/Q1020844"
-                        }
-                    ],
-                    "emails": [
-                        {
-                            "address": "info@hamburg.gruene.de"
-                        }
-                    ]
-                }
+                "type": "REGIONAL_CHAPTER",
+                "level": "DE:LANDESVERBAND",
+                "state": "Hamburg"
             },
             "geometry": {
                 "type": "MultiPolygon",
@@ -46010,75 +45094,9 @@
         {
             "type": "Feature",
             "properties": {
-                "ADE": 2,
-                "GF": 2,
-                "BSG": 1,
-                "RS": "01",
-                "AGS": "01",
-                "SDV_RS": "010020000000",
-                "GEN": "Schleswig-Holstein",
-                "BEZ": "Land",
-                "IBZ": 20,
-                "BEM": "--",
-                "NBD": "ja",
-                "SN_L": "01",
-                "SN_R": "0",
-                "SN_K": "00",
-                "SN_V1": "00",
-                "SN_V2": "00",
-                "SN_G": "000",
-                "FK_S3": "0",
-                "NUTS": "DEF",
-                "RS_0": "010000000000",
-                "AGS_0": "01000000",
-                "WSK": "2012/02/01",
-                "DEBKG_ID": "DEBKGDL20000QMSD",
-                "destatis": {
-                    "population": 2830864,
-                    "population_m": 1381451,
-                    "population_w": 1449413
-                },
-                "green-data": {
-                    "type": "REGIONAL_CHAPTER",
-                    "level": "DE:LANDESVERBAND",
-                    "country": "DE",
-                    "state": "Schleswig-Holstein",
-                    "urls": [
-                        {
-                            "type": "WEBSITE",
-                            "url": "https://sh-gruene.de/"
-                        },
-                        {
-                            "type": "FACEBOOK",
-                            "url": "https://www.facebook.com/gruenesh"
-                        },
-                        {
-                            "type": "TWITTER",
-                            "url": "http://twitter.com/gruene_sh"
-                        },
-                        {
-                            "type": "YOUTUBE",
-                            "url": "https://www.youtube.com/user/GrueneSH"
-                        },
-                        {
-                            "type": "INSTAGRAM",
-                            "url": "https://instagram.com/gruenesh"
-                        },
-                        {
-                            "type": "FLICKR",
-                            "url": "https://www.flickr.com/photos/gruene_sh/"
-                        },
-                        {
-                            "type": "WIKIDATA",
-                            "url": "https://www.wikidata.org/wiki/Q1020855"
-                        }
-                    ],
-                    "emails": [
-                        {
-                            "address": "info@sh-gruene.de"
-                        }
-                    ]
-                }
+                "type": "REGIONAL_CHAPTER",
+                "level": "DE:LANDESVERBAND",
+                "state": "Schleswig-Holstein"
             },
             "geometry": {
                 "type": "Polygon",
@@ -46445,75 +45463,9 @@
         {
             "type": "Feature",
             "properties": {
-                "ADE": 2,
-                "GF": 3,
-                "BSG": 1,
-                "RS": "01",
-                "AGS": "01",
-                "SDV_RS": "010020000000",
-                "GEN": "Schleswig-Holstein",
-                "BEZ": "Land",
-                "IBZ": 20,
-                "BEM": "--",
-                "NBD": "ja",
-                "SN_L": "01",
-                "SN_R": "0",
-                "SN_K": "00",
-                "SN_V1": "00",
-                "SN_V2": "00",
-                "SN_G": "000",
-                "FK_S3": "0",
-                "NUTS": "DEF",
-                "RS_0": "010000000000",
-                "AGS_0": "01000000",
-                "WSK": "2012/02/01",
-                "DEBKG_ID": "DEBKGDL20000QBMI",
-                "destatis": {
-                    "population": 2830864,
-                    "population_m": 1381451,
-                    "population_w": 1449413
-                },
-                "green-data": {
-                    "type": "REGIONAL_CHAPTER",
-                    "level": "DE:LANDESVERBAND",
-                    "country": "DE",
-                    "state": "Schleswig-Holstein",
-                    "urls": [
-                        {
-                            "type": "WEBSITE",
-                            "url": "https://sh-gruene.de/"
-                        },
-                        {
-                            "type": "FACEBOOK",
-                            "url": "https://www.facebook.com/gruenesh"
-                        },
-                        {
-                            "type": "TWITTER",
-                            "url": "http://twitter.com/gruene_sh"
-                        },
-                        {
-                            "type": "YOUTUBE",
-                            "url": "https://www.youtube.com/user/GrueneSH"
-                        },
-                        {
-                            "type": "INSTAGRAM",
-                            "url": "https://instagram.com/gruenesh"
-                        },
-                        {
-                            "type": "FLICKR",
-                            "url": "https://www.flickr.com/photos/gruene_sh/"
-                        },
-                        {
-                            "type": "WIKIDATA",
-                            "url": "https://www.wikidata.org/wiki/Q1020855"
-                        }
-                    ],
-                    "emails": [
-                        {
-                            "address": "info@sh-gruene.de"
-                        }
-                    ]
-                }
+                "type": "REGIONAL_CHAPTER",
+                "level": "DE:LANDESVERBAND",
+                "state": "Schleswig-Holstein"
             },
             "geometry": {
                 "type": "MultiPolygon",
@@ -47808,75 +46760,9 @@
         {
             "type": "Feature",
             "properties": {
-                "ADE": 2,
-                "GF": 1,
-                "BSG": 1,
-                "RS": "02",
-                "AGS": "02",
-                "SDV_RS": "020000000000",
-                "GEN": "Hamburg",
-                "BEZ": "Freie und Hansestadt",
-                "IBZ": 22,
-                "BEM": "--",
-                "NBD": "ja",
-                "SN_L": "02",
-                "SN_R": "0",
-                "SN_K": "00",
-                "SN_V1": "00",
-                "SN_V2": "00",
-                "SN_G": "000",
-                "FK_S3": "0",
-                "NUTS": "DE6",
-                "RS_0": "020000000000",
-                "AGS_0": "02000000",
-                "WSK": "1974/01/01",
-                "DEBKG_ID": "DEBKGDL20000QFG8",
-                "destatis": {
-                    "population": 1762791,
-                    "population_m": 857446,
-                    "population_w": 905345
-                },
-                "green-data": {
-                    "type": "REGIONAL_CHAPTER",
-                    "level": "DE:LANDESVERBAND",
-                    "country": "DE",
-                    "state": "Hamburg",
-                    "urls": [
-                        {
-                            "type": "WEBSITE",
-                            "url": "https://www.gruene-hamburg.de/"
-                        },
-                        {
-                            "type": "FACEBOOK",
-                            "url": "https://www.facebook.com/gruene.hamburg/"
-                        },
-                        {
-                            "type": "TWITTER",
-                            "url": "http://twitter.com/GRUENE_Hamburg/"
-                        },
-                        {
-                            "type": "INSTAGRAM",
-                            "url": "https://www.instagram.com/gruene_hamburg/"
-                        },
-                        {
-                            "type": "FLICKR",
-                            "url": "http://www.flickr.com/gruene_hamburg"
-                        },
-                        {
-                            "type": "YOUTUBE",
-                            "url": "http://youtube.com/user/galhamburg"
-                        },
-                        {
-                            "type": "WIKIDATA",
-                            "url": "https://www.wikidata.org/wiki/Q1020844"
-                        }
-                    ],
-                    "emails": [
-                        {
-                            "address": "info@hamburg.gruene.de"
-                        }
-                    ]
-                }
+                "type": "REGIONAL_CHAPTER",
+                "level": "DE:LANDESVERBAND",
+                "state": "Hamburg"
             },
             "geometry": {
                 "type": "Polygon",
@@ -47997,75 +46883,9 @@
         {
             "type": "Feature",
             "properties": {
-                "ADE": 2,
-                "GF": 4,
-                "BSG": 1,
-                "RS": "14",
-                "AGS": "14",
-                "SDV_RS": "146120000000",
-                "GEN": "Sachsen",
-                "BEZ": "Freistaat",
-                "IBZ": 21,
-                "BEM": "--",
-                "NBD": "ja",
-                "SN_L": "14",
-                "SN_R": "0",
-                "SN_K": "00",
-                "SN_V1": "00",
-                "SN_V2": "00",
-                "SN_G": "000",
-                "FK_S3": "0",
-                "NUTS": "DED",
-                "RS_0": "140000000000",
-                "AGS_0": "14000000",
-                "WSK": "2014/02/01",
-                "DEBKG_ID": "DEBKGDL20000E3VH",
-                "destatis": {
-                    "population": 4055274,
-                    "population_m": 1987607,
-                    "population_w": 2067667
-                },
-                "green-data": {
-                    "type": "REGIONAL_CHAPTER",
-                    "level": "DE:LANDESVERBAND",
-                    "country": "DE",
-                    "state": "Sachsen",
-                    "urls": [
-                        {
-                            "type": "WEBSITE",
-                            "url": "https://www.gruene-sachsen.de/"
-                        },
-                        {
-                            "type": "FACEBOOK",
-                            "url": "https://www.facebook.com/gruene.sachsen"
-                        },
-                        {
-                            "type": "TWITTER",
-                            "url": "https://twitter.com/gruene_sachsen"
-                        },
-                        {
-                            "type": "INSTAGRAM",
-                            "url": "https://www.instagram.com/gruene_sachsen/"
-                        },
-                        {
-                            "type": "FLICKR",
-                            "url": "https://www.flickr.com/photos/gruene_sachsen"
-                        },
-                        {
-                            "type": "YOUTUBE",
-                            "url": "https://www.youtube.com/user/GrueneSachsen"
-                        },
-                        {
-                            "type": "WIKIDATA",
-                            "url": "https://www.wikidata.org/wiki/Q1020852"
-                        }
-                    ],
-                    "emails": [
-                        {
-                            "address": "info@gruene-sachsen.de"
-                        }
-                    ]
-                }
+                "type": "REGIONAL_CHAPTER",
+                "level": "DE:LANDESVERBAND",
+                "state": "Sachsen"
             },
             "geometry": {
                 "type": "Polygon",
@@ -52558,67 +51378,9 @@
         {
             "type": "Feature",
             "properties": {
-                "ADE": 2,
-                "GF": 4,
-                "BSG": 1,
-                "RS": "15",
-                "AGS": "15",
-                "SDV_RS": "150030000000",
-                "GEN": "Sachsen-Anhalt",
-                "BEZ": "Land",
-                "IBZ": 20,
-                "BEM": "--",
-                "NBD": "ja",
-                "SN_L": "15",
-                "SN_R": "0",
-                "SN_K": "00",
-                "SN_V1": "00",
-                "SN_V2": "00",
-                "SN_G": "000",
-                "FK_S3": "0",
-                "NUTS": "DEE",
-                "RS_0": "150000000000",
-                "AGS_0": "15000000",
-                "WSK": "2014/02/01",
-                "DEBKG_ID": "DEBKGDL20000E66C",
-                "destatis": {
-                    "population": 2235548,
-                    "population_m": 1095797,
-                    "population_w": 1139751
-                },
-                "green-data": {
-                    "type": "REGIONAL_CHAPTER",
-                    "level": "DE:LANDESVERBAND",
-                    "country": "DE",
-                    "state": "Sachsen-Anhalt",
-                    "urls": [
-                        {
-                            "type": "WEBSITE",
-                            "url": "https://www.gruene-lsa.de/"
-                        },
-                        {
-                            "type": "FACEBOOK",
-                            "url": "https://www.facebook.com/GRUENELSA"
-                        },
-                        {
-                            "type": "TWITTER",
-                            "url": "https://twitter.com/GRUENE_LSA"
-                        },
-                        {
-                            "type": "INSTAGRAM",
-                            "url": "https://www.instagram.com/gruene_lsa/"
-                        },
-                        {
-                            "type": "WIKIDATA",
-                            "url": "https://www.wikidata.org/wiki/Q1020856"
-                        }
-                    ],
-                    "emails": [
-                        {
-                            "address": "info@gruene-lsa.de"
-                        }
-                    ]
-                }
+                "type": "REGIONAL_CHAPTER",
+                "level": "DE:LANDESVERBAND",
+                "state": "Sachsen-Anhalt"
             },
             "geometry": {
                 "type": "MultiPolygon",
@@ -56683,75 +55445,9 @@
         {
             "type": "Feature",
             "properties": {
-                "ADE": 2,
-                "GF": 4,
-                "BSG": 1,
-                "RS": "02",
-                "AGS": "02",
-                "SDV_RS": "020000000000",
-                "GEN": "Hamburg",
-                "BEZ": "Freie und Hansestadt",
-                "IBZ": 22,
-                "BEM": "--",
-                "NBD": "ja",
-                "SN_L": "02",
-                "SN_R": "0",
-                "SN_K": "00",
-                "SN_V1": "00",
-                "SN_V2": "00",
-                "SN_G": "000",
-                "FK_S3": "0",
-                "NUTS": "DE6",
-                "RS_0": "020000000000",
-                "AGS_0": "02000000",
-                "WSK": "1974/01/01",
-                "DEBKG_ID": "DEBKGDL20000E6GD",
-                "destatis": {
-                    "population": 1762791,
-                    "population_m": 857446,
-                    "population_w": 905345
-                },
-                "green-data": {
-                    "type": "REGIONAL_CHAPTER",
-                    "level": "DE:LANDESVERBAND",
-                    "country": "DE",
-                    "state": "Hamburg",
-                    "urls": [
-                        {
-                            "type": "WEBSITE",
-                            "url": "https://www.gruene-hamburg.de/"
-                        },
-                        {
-                            "type": "FACEBOOK",
-                            "url": "https://www.facebook.com/gruene.hamburg/"
-                        },
-                        {
-                            "type": "TWITTER",
-                            "url": "http://twitter.com/GRUENE_Hamburg/"
-                        },
-                        {
-                            "type": "INSTAGRAM",
-                            "url": "https://www.instagram.com/gruene_hamburg/"
-                        },
-                        {
-                            "type": "FLICKR",
-                            "url": "http://www.flickr.com/gruene_hamburg"
-                        },
-                        {
-                            "type": "YOUTUBE",
-                            "url": "http://youtube.com/user/galhamburg"
-                        },
-                        {
-                            "type": "WIKIDATA",
-                            "url": "https://www.wikidata.org/wiki/Q1020844"
-                        }
-                    ],
-                    "emails": [
-                        {
-                            "address": "info@hamburg.gruene.de"
-                        }
-                    ]
-                }
+                "type": "REGIONAL_CHAPTER",
+                "level": "DE:LANDESVERBAND",
+                "state": "Hamburg"
             },
             "geometry": {
                 "type": "MultiPolygon",
@@ -57626,67 +56322,9 @@
         {
             "type": "Feature",
             "properties": {
-                "ADE": 2,
-                "GF": 1,
-                "BSG": 1,
-                "RS": "13",
-                "AGS": "13",
-                "SDV_RS": "130040000000",
-                "GEN": "Mecklenburg-Vorpommern",
-                "BEZ": "Land",
-                "IBZ": 20,
-                "BEM": "--",
-                "NBD": "ja",
-                "SN_L": "13",
-                "SN_R": "0",
-                "SN_K": "00",
-                "SN_V1": "00",
-                "SN_V2": "00",
-                "SN_G": "000",
-                "FK_S3": "0",
-                "NUTS": "DE8",
-                "RS_0": "130000000000",
-                "AGS_0": "13000000",
-                "WSK": "2014/11/01",
-                "DEBKG_ID": "DEBKGDL20000QFG7",
-                "destatis": {
-                    "population": 1599138,
-                    "population_m": 787945,
-                    "population_w": 811193
-                },
-                "green-data": {
-                    "type": "REGIONAL_CHAPTER",
-                    "level": "DE:LANDESVERBAND",
-                    "country": "DE",
-                    "state": "Mecklenburg-Vorpommern",
-                    "urls": [
-                        {
-                            "type": "WEBSITE",
-                            "url": "https://gruene-mv.de/"
-                        },
-                        {
-                            "type": "FACEBOOK",
-                            "url": "https://www.facebook.com/gruenemv"
-                        },
-                        {
-                            "type": "TWITTER",
-                            "url": "https://twitter.com/GRUENE_MV"
-                        },
-                        {
-                            "type": "INSTAGRAM",
-                            "url": "https://www.instagram.com/gruenemv/"
-                        },
-                        {
-                            "type": "WIKIDATA",
-                            "url": "https://www.wikidata.org/wiki/Q1020846"
-                        }
-                    ],
-                    "emails": [
-                        {
-                            "address": "post@gruene-mv.de"
-                        }
-                    ]
-                }
+                "type": "REGIONAL_CHAPTER",
+                "level": "DE:LANDESVERBAND",
+                "state": "Mecklenburg-Vorpommern"
             },
             "geometry": {
                 "type": "MultiPolygon",
@@ -63341,71 +61979,9 @@
         {
             "type": "Feature",
             "properties": {
-                "ADE": 2,
-                "GF": 2,
-                "BSG": 1,
-                "RS": "03",
-                "AGS": "03",
-                "SDV_RS": "032410001001",
-                "GEN": "Niedersachsen",
-                "BEZ": "Land",
-                "IBZ": 20,
-                "BEM": "--",
-                "NBD": "ja",
-                "SN_L": "03",
-                "SN_R": "0",
-                "SN_K": "00",
-                "SN_V1": "00",
-                "SN_V2": "00",
-                "SN_G": "000",
-                "FK_S3": "0",
-                "NUTS": "DE9",
-                "RS_0": "030000000000",
-                "AGS_0": "03000000",
-                "WSK": "2015/01/01",
-                "DEBKG_ID": "DEBKGDL200000041",
-                "destatis": {
-                    "population": 7826739,
-                    "population_m": 3846089,
-                    "population_w": 3980650
-                },
-                "green-data": {
-                    "type": "REGIONAL_CHAPTER",
-                    "level": "DE:LANDESVERBAND",
-                    "country": "DE",
-                    "state": "Niedersachsen",
-                    "urls": [
-                        {
-                            "type": "WEBSITE",
-                            "url": "https://www.gruene-niedersachsen.de/"
-                        },
-                        {
-                            "type": "FACEBOOK",
-                            "url": "https://www.facebook.com/GRUENE.Niedersachsen"
-                        },
-                        {
-                            "type": "TWITTER",
-                            "url": "https://twitter.com/gruenelvnds"
-                        },
-                        {
-                            "type": "INSTAGRAM",
-                            "url": "https://www.instagram.com/gruenends/"
-                        },
-                        {
-                            "type": "YOUTUBE",
-                            "url": "https://www.youtube.com/user/grueneniedersachsen"
-                        },
-                        {
-                            "type": "WIKIDATA",
-                            "url": "https://www.wikidata.org/wiki/Q1020847"
-                        }
-                    ],
-                    "emails": [
-                        {
-                            "address": "landesverband@gruene-niedersachsen.de"
-                        }
-                    ]
-                }
+                "type": "REGIONAL_CHAPTER",
+                "level": "DE:LANDESVERBAND",
+                "state": "Niedersachsen"
             },
             "geometry": {
                 "type": "MultiPolygon",
@@ -63828,75 +62404,9 @@
         {
             "type": "Feature",
             "properties": {
-                "ADE": 2,
-                "GF": 4,
-                "BSG": 1,
-                "RS": "01",
-                "AGS": "01",
-                "SDV_RS": "010020000000",
-                "GEN": "Schleswig-Holstein",
-                "BEZ": "Land",
-                "IBZ": 20,
-                "BEM": "--",
-                "NBD": "ja",
-                "SN_L": "01",
-                "SN_R": "0",
-                "SN_K": "00",
-                "SN_V1": "00",
-                "SN_V2": "00",
-                "SN_G": "000",
-                "FK_S3": "0",
-                "NUTS": "DEF",
-                "RS_0": "010000000000",
-                "AGS_0": "01000000",
-                "WSK": "2012/02/01",
-                "DEBKG_ID": "DEBKGDL200000029",
-                "destatis": {
-                    "population": 2830864,
-                    "population_m": 1381451,
-                    "population_w": 1449413
-                },
-                "green-data": {
-                    "type": "REGIONAL_CHAPTER",
-                    "level": "DE:LANDESVERBAND",
-                    "country": "DE",
-                    "state": "Schleswig-Holstein",
-                    "urls": [
-                        {
-                            "type": "WEBSITE",
-                            "url": "https://sh-gruene.de/"
-                        },
-                        {
-                            "type": "FACEBOOK",
-                            "url": "https://www.facebook.com/gruenesh"
-                        },
-                        {
-                            "type": "TWITTER",
-                            "url": "http://twitter.com/gruene_sh"
-                        },
-                        {
-                            "type": "YOUTUBE",
-                            "url": "https://www.youtube.com/user/GrueneSH"
-                        },
-                        {
-                            "type": "INSTAGRAM",
-                            "url": "https://instagram.com/gruenesh"
-                        },
-                        {
-                            "type": "FLICKR",
-                            "url": "https://www.flickr.com/photos/gruene_sh/"
-                        },
-                        {
-                            "type": "WIKIDATA",
-                            "url": "https://www.wikidata.org/wiki/Q1020855"
-                        }
-                    ],
-                    "emails": [
-                        {
-                            "address": "info@sh-gruene.de"
-                        }
-                    ]
-                }
+                "type": "REGIONAL_CHAPTER",
+                "level": "DE:LANDESVERBAND",
+                "state": "Schleswig-Holstein"
             },
             "geometry": {
                 "type": "MultiPolygon",
@@ -68699,75 +67209,9 @@
         {
             "type": "Feature",
             "properties": {
-                "ADE": 2,
-                "GF": 2,
-                "BSG": 1,
-                "RS": "01",
-                "AGS": "01",
-                "SDV_RS": "010020000000",
-                "GEN": "Schleswig-Holstein",
-                "BEZ": "Land",
-                "IBZ": 20,
-                "BEM": "--",
-                "NBD": "ja",
-                "SN_L": "01",
-                "SN_R": "0",
-                "SN_K": "00",
-                "SN_V1": "00",
-                "SN_V2": "00",
-                "SN_G": "000",
-                "FK_S3": "0",
-                "NUTS": "DEF",
-                "RS_0": "010000000000",
-                "AGS_0": "01000000",
-                "WSK": "2012/02/01",
-                "DEBKG_ID": "DEBKGDL20000E68Q",
-                "destatis": {
-                    "population": 2830864,
-                    "population_m": 1381451,
-                    "population_w": 1449413
-                },
-                "green-data": {
-                    "type": "REGIONAL_CHAPTER",
-                    "level": "DE:LANDESVERBAND",
-                    "country": "DE",
-                    "state": "Schleswig-Holstein",
-                    "urls": [
-                        {
-                            "type": "WEBSITE",
-                            "url": "https://sh-gruene.de/"
-                        },
-                        {
-                            "type": "FACEBOOK",
-                            "url": "https://www.facebook.com/gruenesh"
-                        },
-                        {
-                            "type": "TWITTER",
-                            "url": "http://twitter.com/gruene_sh"
-                        },
-                        {
-                            "type": "YOUTUBE",
-                            "url": "https://www.youtube.com/user/GrueneSH"
-                        },
-                        {
-                            "type": "INSTAGRAM",
-                            "url": "https://instagram.com/gruenesh"
-                        },
-                        {
-                            "type": "FLICKR",
-                            "url": "https://www.flickr.com/photos/gruene_sh/"
-                        },
-                        {
-                            "type": "WIKIDATA",
-                            "url": "https://www.wikidata.org/wiki/Q1020855"
-                        }
-                    ],
-                    "emails": [
-                        {
-                            "address": "info@sh-gruene.de"
-                        }
-                    ]
-                }
+                "type": "REGIONAL_CHAPTER",
+                "level": "DE:LANDESVERBAND",
+                "state": "Schleswig-Holstein"
             },
             "geometry": {
                 "type": "MultiPolygon",
@@ -70718,71 +69162,9 @@
         {
             "type": "Feature",
             "properties": {
-                "ADE": 2,
-                "GF": 2,
-                "BSG": 1,
-                "RS": "03",
-                "AGS": "03",
-                "SDV_RS": "032410001001",
-                "GEN": "Niedersachsen",
-                "BEZ": "Land",
-                "IBZ": 20,
-                "BEM": "--",
-                "NBD": "ja",
-                "SN_L": "03",
-                "SN_R": "0",
-                "SN_K": "00",
-                "SN_V1": "00",
-                "SN_V2": "00",
-                "SN_G": "000",
-                "FK_S3": "0",
-                "NUTS": "DE9",
-                "RS_0": "030000000000",
-                "AGS_0": "03000000",
-                "WSK": "2015/01/01",
-                "DEBKG_ID": "DEBKGDL20000QMSE",
-                "destatis": {
-                    "population": 7826739,
-                    "population_m": 3846089,
-                    "population_w": 3980650
-                },
-                "green-data": {
-                    "type": "REGIONAL_CHAPTER",
-                    "level": "DE:LANDESVERBAND",
-                    "country": "DE",
-                    "state": "Niedersachsen",
-                    "urls": [
-                        {
-                            "type": "WEBSITE",
-                            "url": "https://www.gruene-niedersachsen.de/"
-                        },
-                        {
-                            "type": "FACEBOOK",
-                            "url": "https://www.facebook.com/GRUENE.Niedersachsen"
-                        },
-                        {
-                            "type": "TWITTER",
-                            "url": "https://twitter.com/gruenelvnds"
-                        },
-                        {
-                            "type": "INSTAGRAM",
-                            "url": "https://www.instagram.com/gruenends/"
-                        },
-                        {
-                            "type": "YOUTUBE",
-                            "url": "https://www.youtube.com/user/grueneniedersachsen"
-                        },
-                        {
-                            "type": "WIKIDATA",
-                            "url": "https://www.wikidata.org/wiki/Q1020847"
-                        }
-                    ],
-                    "emails": [
-                        {
-                            "address": "landesverband@gruene-niedersachsen.de"
-                        }
-                    ]
-                }
+                "type": "REGIONAL_CHAPTER",
+                "level": "DE:LANDESVERBAND",
+                "state": "Niedersachsen"
             },
             "geometry": {
                 "type": "MultiPolygon",
@@ -71225,67 +69607,9 @@
         {
             "type": "Feature",
             "properties": {
-                "ADE": 2,
-                "GF": 3,
-                "BSG": 1,
-                "RS": "13",
-                "AGS": "13",
-                "SDV_RS": "130040000000",
-                "GEN": "Mecklenburg-Vorpommern",
-                "BEZ": "Land",
-                "IBZ": 20,
-                "BEM": "--",
-                "NBD": "ja",
-                "SN_L": "13",
-                "SN_R": "0",
-                "SN_K": "00",
-                "SN_V1": "00",
-                "SN_V2": "00",
-                "SN_G": "000",
-                "FK_S3": "0",
-                "NUTS": "DE8",
-                "RS_0": "130000000000",
-                "AGS_0": "13000000",
-                "WSK": "2014/11/01",
-                "DEBKG_ID": "DEBKGDL20000QBMH",
-                "destatis": {
-                    "population": 1599138,
-                    "population_m": 787945,
-                    "population_w": 811193
-                },
-                "green-data": {
-                    "type": "REGIONAL_CHAPTER",
-                    "level": "DE:LANDESVERBAND",
-                    "country": "DE",
-                    "state": "Mecklenburg-Vorpommern",
-                    "urls": [
-                        {
-                            "type": "WEBSITE",
-                            "url": "https://gruene-mv.de/"
-                        },
-                        {
-                            "type": "FACEBOOK",
-                            "url": "https://www.facebook.com/gruenemv"
-                        },
-                        {
-                            "type": "TWITTER",
-                            "url": "https://twitter.com/GRUENE_MV"
-                        },
-                        {
-                            "type": "INSTAGRAM",
-                            "url": "https://www.instagram.com/gruenemv/"
-                        },
-                        {
-                            "type": "WIKIDATA",
-                            "url": "https://www.wikidata.org/wiki/Q1020846"
-                        }
-                    ],
-                    "emails": [
-                        {
-                            "address": "post@gruene-mv.de"
-                        }
-                    ]
-                }
+                "type": "REGIONAL_CHAPTER",
+                "level": "DE:LANDESVERBAND",
+                "state": "Mecklenburg-Vorpommern"
             },
             "geometry": {
                 "type": "MultiPolygon",
@@ -71368,67 +69692,9 @@
         {
             "type": "Feature",
             "properties": {
-                "ADE": 2,
-                "GF": 2,
-                "BSG": 1,
-                "RS": "13",
-                "AGS": "13",
-                "SDV_RS": "130040000000",
-                "GEN": "Mecklenburg-Vorpommern",
-                "BEZ": "Land",
-                "IBZ": 20,
-                "BEM": "--",
-                "NBD": "ja",
-                "SN_L": "13",
-                "SN_R": "0",
-                "SN_K": "00",
-                "SN_V1": "00",
-                "SN_V2": "00",
-                "SN_G": "000",
-                "FK_S3": "0",
-                "NUTS": "DE8",
-                "RS_0": "130000000000",
-                "AGS_0": "13000000",
-                "WSK": "2014/11/01",
-                "DEBKG_ID": "DEBKGDL20000E5I7",
-                "destatis": {
-                    "population": 1599138,
-                    "population_m": 787945,
-                    "population_w": 811193
-                },
-                "green-data": {
-                    "type": "REGIONAL_CHAPTER",
-                    "level": "DE:LANDESVERBAND",
-                    "country": "DE",
-                    "state": "Mecklenburg-Vorpommern",
-                    "urls": [
-                        {
-                            "type": "WEBSITE",
-                            "url": "https://gruene-mv.de/"
-                        },
-                        {
-                            "type": "FACEBOOK",
-                            "url": "https://www.facebook.com/gruenemv"
-                        },
-                        {
-                            "type": "TWITTER",
-                            "url": "https://twitter.com/GRUENE_MV"
-                        },
-                        {
-                            "type": "INSTAGRAM",
-                            "url": "https://www.instagram.com/gruenemv/"
-                        },
-                        {
-                            "type": "WIKIDATA",
-                            "url": "https://www.wikidata.org/wiki/Q1020846"
-                        }
-                    ],
-                    "emails": [
-                        {
-                            "address": "post@gruene-mv.de"
-                        }
-                    ]
-                }
+                "type": "REGIONAL_CHAPTER",
+                "level": "DE:LANDESVERBAND",
+                "state": "Mecklenburg-Vorpommern"
             },
             "geometry": {
                 "type": "MultiPolygon",
@@ -72963,67 +71229,9 @@
         {
             "type": "Feature",
             "properties": {
-                "ADE": 2,
-                "GF": 4,
-                "BSG": 1,
-                "RS": "16",
-                "AGS": "16",
-                "SDV_RS": "160510000000",
-                "GEN": "Th\u00fcringen",
-                "BEZ": "Freistaat",
-                "IBZ": 21,
-                "BEM": "--",
-                "NBD": "ja",
-                "SN_L": "16",
-                "SN_R": "0",
-                "SN_K": "00",
-                "SN_V1": "00",
-                "SN_V2": "00",
-                "SN_G": "000",
-                "FK_S3": "0",
-                "NUTS": "DEG",
-                "RS_0": "160000000000",
-                "AGS_0": "16000000",
-                "WSK": "2014/02/01",
-                "DEBKG_ID": "DEBKGDL20000E09Y",
-                "destatis": {
-                    "population": 2156759,
-                    "population_m": 1062930,
-                    "population_w": 1093829
-                },
-                "green-data": {
-                    "type": "REGIONAL_CHAPTER",
-                    "level": "DE:LANDESVERBAND",
-                    "country": "DE",
-                    "state": "Th\u00fcringen",
-                    "urls": [
-                        {
-                            "type": "WEBSITE",
-                            "url": "https://gruene-thueringen.de/"
-                        },
-                        {
-                            "type": "FACEBOOK",
-                            "url": "https://www.facebook.com/gruenethueringen"
-                        },
-                        {
-                            "type": "TWITTER",
-                            "url": "https://twitter.com/Gruene_TH"
-                        },
-                        {
-                            "type": "WIKIDATA",
-                            "url": "https://www.wikidata.org/wiki/Q1020858"
-                        },
-                        {
-                            "type": "INSTAGRAM",
-                            "url": "https://www.instagram.com/gruene_th/"
-                        }
-                    ],
-                    "emails": [
-                        {
-                            "address": "info@gruene-thueringen.de"
-                        }
-                    ]
-                }
+                "type": "REGIONAL_CHAPTER",
+                "level": "DE:LANDESVERBAND",
+                "state": "Th\u00fcringen"
             },
             "geometry": {
                 "type": "Polygon",
@@ -77734,71 +75942,9 @@
         {
             "type": "Feature",
             "properties": {
-                "ADE": 2,
-                "GF": 1,
-                "BSG": 1,
-                "RS": "03",
-                "AGS": "03",
-                "SDV_RS": "032410001001",
-                "GEN": "Niedersachsen",
-                "BEZ": "Land",
-                "IBZ": 20,
-                "BEM": "--",
-                "NBD": "ja",
-                "SN_L": "03",
-                "SN_R": "0",
-                "SN_K": "00",
-                "SN_V1": "00",
-                "SN_V2": "00",
-                "SN_G": "000",
-                "FK_S3": "0",
-                "NUTS": "DE9",
-                "RS_0": "030000000000",
-                "AGS_0": "03000000",
-                "WSK": "2015/01/01",
-                "DEBKG_ID": "DEBKGDL20000QFG5",
-                "destatis": {
-                    "population": 7826739,
-                    "population_m": 3846089,
-                    "population_w": 3980650
-                },
-                "green-data": {
-                    "type": "REGIONAL_CHAPTER",
-                    "level": "DE:LANDESVERBAND",
-                    "country": "DE",
-                    "state": "Niedersachsen",
-                    "urls": [
-                        {
-                            "type": "WEBSITE",
-                            "url": "https://www.gruene-niedersachsen.de/"
-                        },
-                        {
-                            "type": "FACEBOOK",
-                            "url": "https://www.facebook.com/GRUENE.Niedersachsen"
-                        },
-                        {
-                            "type": "TWITTER",
-                            "url": "https://twitter.com/gruenelvnds"
-                        },
-                        {
-                            "type": "INSTAGRAM",
-                            "url": "https://www.instagram.com/gruenends/"
-                        },
-                        {
-                            "type": "YOUTUBE",
-                            "url": "https://www.youtube.com/user/grueneniedersachsen"
-                        },
-                        {
-                            "type": "WIKIDATA",
-                            "url": "https://www.wikidata.org/wiki/Q1020847"
-                        }
-                    ],
-                    "emails": [
-                        {
-                            "address": "landesverband@gruene-niedersachsen.de"
-                        }
-                    ]
-                }
+                "type": "REGIONAL_CHAPTER",
+                "level": "DE:LANDESVERBAND",
+                "state": "Niedersachsen"
             },
             "geometry": {
                 "type": "MultiPolygon",
@@ -79567,67 +77713,9 @@
         {
             "type": "Feature",
             "properties": {
-                "ADE": 2,
-                "GF": 4,
-                "BSG": 1,
-                "RS": "09",
-                "AGS": "09",
-                "SDV_RS": "091620000000",
-                "GEN": "Bayern",
-                "BEZ": "Freistaat",
-                "IBZ": 21,
-                "BEM": "--",
-                "NBD": "ja",
-                "SN_L": "09",
-                "SN_R": "0",
-                "SN_K": "00",
-                "SN_V1": "00",
-                "SN_V2": "00",
-                "SN_G": "000",
-                "FK_S3": "0",
-                "NUTS": "DE2",
-                "RS_0": "090000000000",
-                "AGS_0": "09000000",
-                "WSK": "2011/07/01",
-                "DEBKG_ID": "DEBKGDL20000E5HO",
-                "destatis": {
-                    "population": 12691568,
-                    "population_m": 6249965,
-                    "population_w": 6441603
-                },
-                "green-data": {
-                    "type": "REGIONAL_CHAPTER",
-                    "level": "DE:LANDESVERBAND",
-                    "country": "DE",
-                    "state": "Bayern",
-                    "urls": [
-                        {
-                            "type": "WEBSITE",
-                            "url": "https://gruene-bayern.de/"
-                        },
-                        {
-                            "type": "FACEBOOK",
-                            "url": "https://www.facebook.com/gruenebayern"
-                        },
-                        {
-                            "type": "TWITTER",
-                            "url": "https://twitter.com/Gruene_Bayern"
-                        },
-                        {
-                            "type": "INSTAGRAM",
-                            "url": "https://www.instagram.com/gruenebayern/"
-                        },
-                        {
-                            "type": "WIKIDATA",
-                            "url": "https://www.wikidata.org/wiki/Q1020837"
-                        }
-                    ],
-                    "emails": [
-                        {
-                            "address": "landesverband@bayern.gruene.de"
-                        }
-                    ]
-                }
+                "type": "REGIONAL_CHAPTER",
+                "level": "DE:LANDESVERBAND",
+                "state": "Bayern"
             },
             "geometry": {
                 "type": "Polygon",
@@ -88072,71 +86160,9 @@
         {
             "type": "Feature",
             "properties": {
-                "ADE": 2,
-                "GF": 1,
-                "BSG": 1,
-                "RS": "03",
-                "AGS": "03",
-                "SDV_RS": "032410001001",
-                "GEN": "Niedersachsen",
-                "BEZ": "Land",
-                "IBZ": 20,
-                "BEM": "--",
-                "NBD": "ja",
-                "SN_L": "03",
-                "SN_R": "0",
-                "SN_K": "00",
-                "SN_V1": "00",
-                "SN_V2": "00",
-                "SN_G": "000",
-                "FK_S3": "0",
-                "NUTS": "DE9",
-                "RS_0": "030000000000",
-                "AGS_0": "03000000",
-                "WSK": "2015/01/01",
-                "DEBKG_ID": "DEBKGDL200010SHR",
-                "destatis": {
-                    "population": 7826739,
-                    "population_m": 3846089,
-                    "population_w": 3980650
-                },
-                "green-data": {
-                    "type": "REGIONAL_CHAPTER",
-                    "level": "DE:LANDESVERBAND",
-                    "country": "DE",
-                    "state": "Niedersachsen",
-                    "urls": [
-                        {
-                            "type": "WEBSITE",
-                            "url": "https://www.gruene-niedersachsen.de/"
-                        },
-                        {
-                            "type": "FACEBOOK",
-                            "url": "https://www.facebook.com/GRUENE.Niedersachsen"
-                        },
-                        {
-                            "type": "TWITTER",
-                            "url": "https://twitter.com/gruenelvnds"
-                        },
-                        {
-                            "type": "INSTAGRAM",
-                            "url": "https://www.instagram.com/gruenends/"
-                        },
-                        {
-                            "type": "YOUTUBE",
-                            "url": "https://www.youtube.com/user/grueneniedersachsen"
-                        },
-                        {
-                            "type": "WIKIDATA",
-                            "url": "https://www.wikidata.org/wiki/Q1020847"
-                        }
-                    ],
-                    "emails": [
-                        {
-                            "address": "landesverband@gruene-niedersachsen.de"
-                        }
-                    ]
-                }
+                "type": "REGIONAL_CHAPTER",
+                "level": "DE:LANDESVERBAND",
+                "state": "Niedersachsen"
             },
             "geometry": {
                 "type": "Polygon",
