@@ -12,13 +12,13 @@ def updateMaps(level="lv"):
     tw_max = 0
     in_max = 0
     for feature in map_data["features"]:
-        greendata = feature["properties"]["green-data"]
-        key = "//".join([greendata["type"], greendata["level"], greendata["state"], greendata.get("district", ""), greendata.get("city", "")])
+        p = feature["properties"]
+        key = "//".join([p["type"], p["level"], p["state"], p.get("district", ""), p.get("city", "")])
         result = data.get(key)
-        print(result)
+
         social_data = {}
         if result:
-            _, _, _ , _, _, fb_name, fb_count, tw_name, tw_count, in_name, in_count = data.get(key)
+            _, _, _ , _, _, fb_name, fb_count, tw_name, tw_count, in_name, in_count = result
             if fb_count > fb_max:
                 fb_max = fb_count
             if tw_count > tw_max:
@@ -34,11 +34,10 @@ def updateMaps(level="lv"):
         feature["properties"].update(social_data)
 
     print(fb_max, tw_max, in_max)
-    plattform = "fb"
     for plattform, maxval, col in zip(["fb", "tw", "in"], [fb_max, tw_max, in_max], ["#3664a2", "#55acee", "#d02e92"]):
         for feature in map_data["features"]:
             count = feature["properties"].get(plattform + "_count", 0)
-            if level=="lv":
+            if level == "lv":
                 # linear for LV
                 feature["properties"]["fill-opacity"] = count/maxval
             elif level == "kv":
