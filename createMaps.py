@@ -3,6 +3,8 @@ from copy import copy
 from pprint import pprint
 from spider import dir_entries
 import difflib
+from osmxtract import overpass, location
+import urllib
 
 COUNTRY_MAP =  {"01": "Schleswig-Holstein",
                 "02": "Hamburg",
@@ -287,6 +289,32 @@ def createKVBasemap():
     with open("maps/kv_basemap.geojson", "w") as output_f:
         json.dump(result_map, output_f, indent=4)
 
+
+def getHamburgMap():
+    lat, lon = location.geocode('Hamburg, Germany')
+    bounds = location.from_buffer(lat, lon, buffer_size=10000)
+    print(bounds)
+    # Build an overpass QL query and get the JSON response
+    query = f'[out:json][timeout:25];(relation["type"="boundary"]["boundary"="administrative"]["admin_level"="9"]{bounds}; ); out geom qt;'
+    response = overpass.request(query)
+    ids = []
+    names = []
+    for elem in response["elements"]:
+        print(elem["id"])
+        ids.append(elem["id"])
+        names.append(elem["tags"]["name"])
+
+    mapdata = []
+    for id_, name in zip(ids, names):
+        url = "http://polygons.openstreetmap.fr/get_geojson.py?id=" + str(id_) + "&params=0"
+        urllib.request.urlretrieve(url, './tmp.geojson')
+        print(name)
+        with open('./tmp.geojson') as f:
+            data = json.load(f)
+            pprint(data)
+            # TODO
+
 if __name__ == "__main__":
-    createKVBasemap()
-    createLVBasemap()
+    #createKVBasemap()
+    #createLVBasemap()
+    getHamburgMap()
