@@ -166,8 +166,6 @@ def main():
             key = "//".join([typ, level, land, kreis, stadt])
             result.update({key: [typ, level, land, kreis, stadt, fbname, fbLikes, fbVerified, twtname, twtFollower, twtVerified, instaName, instaFollower, instaVerified]})
         idx += 1
-        if idx == 50:
-            break
 
     with open("docs/result.json", "w") as f:
         json.dump(result, f)
