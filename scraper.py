@@ -20,7 +20,7 @@ def scrapeInstagramData(username):
         decoded = decode(result[1])
         data = json.loads(decoded)
         data["entry_data"]["ProfilePage"][0]["graphql"]["user"]["edge_owner_to_timeline_media"]["edges"] = "----"
-        return data["entry_data"]["ProfilePage"][0]["graphql"]["user"]
+        return data["entry_data"]["ProfilePage"][0]["graphql"]["user"]["edge_followed_by"]["count"], data["entry_data"]["ProfilePage"][0]["graphql"]["user"]["is_verified"]
     else:
         print("No data found for", username, file=sys.stderr)
         
@@ -55,4 +55,4 @@ def scrapeTwitterData(username):
 if __name__ == '__main__':
     print(scrapeFacebookData("B90DieGruenen"))
     print(scrapeTwitterData("Die_Gruenen"))
-    print(scrapeInstagramData("die_gruenen")["edge_followed_by"]["count"])
+    print(scrapeInstagramData("die_gruenen"))

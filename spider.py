@@ -146,10 +146,7 @@ def main():
             elif url["type"] == "INSTAGRAM":
                 instaName = getInstagramName(url["url"])
                 try:
-                    instaData = scrapeInstagramData(instaName)
-                    if instaData:
-                        instaFollower = instaData["edge_followed_by"]["count"]
-                        instaVerified = instaData["is_verified"]
+                    instaFollower, instaVerified = scrapeInstagramData(instaName)
                     sleep(0.1)
                 except Exception as e:
                     print("INSTAGRAM ERROR for", url["url"], "--", instaName, file=sys.stderr)
@@ -167,8 +164,10 @@ def main():
             fbname = "--"
         if fbLikes + twtFollower + instaFollower > 0:
             key = "//".join([typ, level, land, kreis, stadt])
-            result.update({key: [typ, level, land, kreis, stadt, fbname, fbLikes, twtname, twtFollower, instaName, instaFollower]})
+            result.update({key: [typ, level, land, kreis, stadt, fbname, fbLikes, fbVerified, twtname, twtFollower, twtVerified, instaName, instaFollower, instaVerified]})
         idx += 1
+        if idx == 50:
+            break
 
     with open("docs/result.json", "w") as f:
         json.dump(result, f)
