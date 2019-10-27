@@ -6,7 +6,7 @@ from pprint import pprint
 import sys
 import re
 import json
-from scraper import scrapeFacebookLikes, scrapeInstagramData, scrapeTwitterFollowers
+from scraper import scrapeFacebookData, scrapeInstagramData, scrapeTwitterData
 from time import sleep
 
 # Git repo for our data
@@ -107,11 +107,14 @@ def main():
     for entry in dir_entries():
         fbname = "--"
         fbLikes = 0
+        fbVerified = False
         twtname = "--"
         twtFollower = 0
+        twtVerified = False
         instaName = "--"
         instaFollower = 0
-        
+        instaVerified = False
+
         if not entry.get("urls"):
             continue
         for url in entry["urls"]:
@@ -119,40 +122,38 @@ def main():
                 fbname = getFacebookName(url["url"])
                 if fbname:
                     try:
-                        fbLikes = scrapeFacebookLikes(fbname)
+                        fbLikes, fbVerified = scrapeFacebookData(fbname)
                         sleep(0.1)
                     except Exception as e:
                         print("FACEBOOK ERROR for", url["url"], "--", fbname, file=sys.stderr)
                         print(e, file=sys.stderr)
                         continue
-                    print(" FB", fbname, fbLikes)
+                    print(" FB", fbname, fbLikes, fbVerified)
                     fbcount += 1
 
             elif url["type"] == "TWITTER":
                 twtname = getTwitterName(url["url"])
                 try:
-                    twtFollower = scrapeTwitterFollowers(twtname)
+                    twtFollower, twtVerified = scrapeTwitterData(twtname)
                     sleep(0.1)
                 except Exception as e:
                     print("TWITTER ERROR for", url["url"], "--", twtname, file=sys.stderr)
                     print(e, file=sys.stderr)
                     continue
                 twtcount += 1
-                print(" TWITTER", twtname, twtFollower)
+                print(" TWITTER", twtname, twtFollower, twtVerified)
 
             elif url["type"] == "INSTAGRAM":
                 instaName = getInstagramName(url["url"])
                 try:
-                    instaData = scrapeInstagramData(instaName)
-                    if instaData:
-                        instaFollower = instaData["edge_followed_by"]["count"]
+                    instaFollower, instaVerified = scrapeInstagramData(instaName)
                     sleep(0.1)
                 except Exception as e:
                     print("INSTAGRAM ERROR for", url["url"], "--", instaName, file=sys.stderr)
                     print(e, file=sys.stderr)
                     continue
                 instacount += 1
-                print(" INSTA", instaName, instaFollower)
+                print(" INSTA", instaName, instaFollower, instaVerified)
 
         typ = entry.get("type")
         level = entry.get("level", "")
@@ -163,7 +164,7 @@ def main():
             fbname = "--"
         if fbLikes + twtFollower + instaFollower > 0:
             key = "//".join([typ, level, land, kreis, stadt])
-            result.update({key: [typ, level, land, kreis, stadt, fbname, fbLikes, twtname, twtFollower, instaName, instaFollower]})
+            result.update({key: [typ, level, land, kreis, stadt, fbname, fbLikes, fbVerified, twtname, twtFollower, twtVerified, instaName, instaFollower, instaVerified]})
         idx += 1
 
     with open("docs/result.json", "w") as f:

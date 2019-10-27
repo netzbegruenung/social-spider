@@ -20,37 +20,39 @@ def scrapeInstagramData(username):
         decoded = decode(result[1])
         data = json.loads(decoded)
         data["entry_data"]["ProfilePage"][0]["graphql"]["user"]["edge_owner_to_timeline_media"]["edges"] = "----"
-        return data["entry_data"]["ProfilePage"][0]["graphql"]["user"]
+        return data["entry_data"]["ProfilePage"][0]["graphql"]["user"]["edge_followed_by"]["count"], data["entry_data"]["ProfilePage"][0]["graphql"]["user"]["is_verified"]
     else:
         print("No data found for", username, file=sys.stderr)
         
-def scrapeFacebookLikes(username):
+def scrapeFacebookData(username):
     url = "https://www.facebook.com/" + username
     r = requests.get(url)
 
     s = str(r.content)
-    pattern = "Gef&#xe4;llt ([\d\.]+) Mal"
+    verified = "Das blaue Verifizierungsabzeichen" in s
+    pattern = r"Gef&#xe4;llt ([\d\.]+) Mal"
     result = re.search(pattern, s)
     if result:
-        return int(result[1].replace(".", ""))
+        return int(result[1].replace(".", "")), verified
     else:
         print("No data found for", username, file=sys.stderr)
-        return 0
+        return 0, verified
 
-def scrapeTwitterFollowers(username):
+def scrapeTwitterData(username):
     url = "https://www.twitter.com/" + username
     r = requests.get(url)
 
     s = str(r.content)
+    verified = "ProfileHeaderCard-badges" in s
     pattern = r' title="([\d\.]+) Follower"'
     result = re.search(pattern, s)
     if result:
-        return int(result[1].replace(".", ""))
+        return int(result[1].replace(".", "")), verified
     else:
         print("No data found for", username, file=sys.stderr)
-        return 0
+        return 0, verified
 
 if __name__ == '__main__':
-    print(scrapeFacebookLikes("B90DieGruenen"))
-    print(scrapeTwitterFollowers("Die_Gruenen"))
-    print(scrapeInstagramData("die_gruenen")["edge_followed_by"]["count"])
+    print(scrapeFacebookData("B90DieGruenen"))
+    print(scrapeTwitterData("Die_Gruenen"))
+    print(scrapeInstagramData("die_gruenen"))
