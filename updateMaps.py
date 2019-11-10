@@ -18,7 +18,7 @@ def updateMaps(level="lv"):
 
         social_data = {}
         if result:
-            _, _, _ , _, _, fb_name, fb_count, tw_name, tw_count, in_name, in_count = result
+            _, _, _ , _, _, fb_name, fb_count, fb_verified, tw_name, tw_count, tw_verified, in_name, in_count, in_verified = result
             if fb_count > fb_max:
                 fb_max = fb_count
             if tw_count > tw_max:
@@ -27,10 +27,13 @@ def updateMaps(level="lv"):
                 in_max = in_count
             social_data["fb_name"] = fb_name
             social_data["fb_count"] = fb_count
+            social_data["fb_verified"] = fb_verified
             social_data["tw_name"] = tw_name
             social_data["tw_count"] = tw_count
+            social_data["tw_verified"] = tw_verified
             social_data["in_name"] = in_name
             social_data["in_count"] = in_count
+            social_data["in_verified"] = in_verified
         feature["properties"].update(social_data)
 
     print(fb_max, tw_max, in_max)
