@@ -1,8 +1,11 @@
 import json
+import os
 from copy import copy
 from pprint import pprint
 from spider import dir_entries
 import difflib
+from osmxtract import overpass, location
+import urllib
 
 COUNTRY_MAP =  {"01": "Schleswig-Holstein",
                 "02": "Hamburg",
@@ -282,10 +285,92 @@ def createKVBasemap():
             feature["properties"]["state"] = entry["state"]
             feature["properties"]["district"] = entry["district"]
             result_features.append(feature)
+    result_features += getHamburgMap()
+    result_features += getBerlinMap()
+    result_features += getBremenMap()
     result_map = {"type": "FeatureCollection",
                   "features": result_features}
     with open("maps/kv_basemap.geojson", "w") as output_f:
         json.dump(result_map, output_f, indent=4)
+
+
+def getBerlinMap():
+    lat, lon = location.geocode('Berlin, Germany')
+    bounds = location.from_buffer(lat, lon, buffer_size=10000)
+    print(bounds)
+    # Build an overpass QL query and get the JSON response
+    query = f'[out:json][timeout:25];(relation["type"="boundary"]["boundary"="administrative"]["admin_level"="9"]{bounds}; ); out geom qt;'
+    response = overpass.request(query)
+    ids = []
+    names = []
+    for elem in response["elements"]:
+        print(elem["id"])
+        ids.append(elem["id"])
+        names.append(elem["tags"]["name"])
+
+    mapdata = []
+    for id_, name in zip(ids, names):
+        if name == "Lindenberg":
+            continue
+        url = "http://polygons.openstreetmap.fr/get_geojson.py?id=" + str(id_) + "&params=0"
+        urllib.request.urlretrieve(url, './tmp.geojson')
+        print(name)
+        with open('./tmp.geojson') as f:
+            data = json.load(f)
+            print(len(data["geometries"]))
+            c = {"type": "Feature",
+                "properties": {
+                    "type": "REGIONAL_CHAPTER",
+                    "level": "DE:KREISVERBAND",
+                    "state": "Berlin",
+                    "district": name
+                },
+                "geometry": data["geometries"][0]}
+            mapdata.append(c)
+    os.remove('./tmp.geojson')
+    return mapdata
+
+
+def getHamburgMap():
+    lat, lon = location.geocode('Hamburg, Germany')
+    bounds = location.from_buffer(lat, lon, buffer_size=10000)
+    print(bounds)
+    # Build an overpass QL query and get the JSON response
+    query = f'[out:json][timeout:25];(relation["type"="boundary"]["boundary"="administrative"]["admin_level"="9"]{bounds}; ); out geom qt;'
+    response = overpass.request(query)
+    ids = []
+    names = []
+    for elem in response["elements"]:
+        print(elem["id"])
+        ids.append(elem["id"])
+        names.append(elem["tags"]["name"])
+
+    mapdata = []
+    for id_, name in zip(ids, names):
+        url = "http://polygons.openstreetmap.fr/get_geojson.py?id=" + str(id_) + "&params=0"
+        urllib.request.urlretrieve(url, './tmp.geojson')
+        print(name)
+        if name.startswith("Hamburg-"):
+            name = name.replace("Hamburg-", "")
+        with open('./tmp.geojson') as f:
+            data = json.load(f)
+            print(len(data["geometries"]))
+            c = {"type": "Feature",
+                "properties": {
+                    "type": "REGIONAL_CHAPTER",
+                    "level": "DE:KREISVERBAND",
+                    "state": "Hamburg",
+                    "district": name
+                },
+                "geometry": data["geometries"][0]}
+            mapdata.append(c)
+    os.remove('./tmp.geojson')
+    return mapdata
+
+def getBremenMap():
+    with open('./maps/additional_hb.geojson') as f:
+        data = json.load(f)
+        return data["features"]
 
 if __name__ == "__main__":
     createKVBasemap()
